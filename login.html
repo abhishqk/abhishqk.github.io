@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.7);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 140, 0, 0.1) 0%,
+                transparent 70%
+            );
+            transition: all 0.3s ease-out;
+        }
+
+        /* Main Login Container */
+        .login-container {
+            position: relative;
+            width: 380px;
+            height: 450px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.2);
+            transition: all 0.5s ease;
+            z-index: 10;
+        }
+
+        /* Glowing Border Effect */
+        .login-container::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(
+                transparent, transparent, transparent, #ff8c00,
+                transparent, transparent, transparent, #ff4500
+            );
+            animation: rotate 8s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .login-container:hover::before {
+            opacity: 1;
+        }
+
+        .login-container::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #1e1e1e;
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Login Header */
+        .login-header {
+            color: #ff8c00;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 0 15px rgba(255, 140, 0, 0.7);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Input Container */
+        .input-container {
+            width: 100%;
+            padding: 0 40px;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Input Box Styling */
+        .input-box {
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(40, 40, 40, 0.8);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-box input:focus {
+            border-color: #ff8c00;
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+        }
+
+        /* Button Styling */
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff8c00, #ff6b00);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.8);
+        }
+
+        /* Sign Up Link */
+        .signup-link {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .signup-link a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        /* Hover Effects */
+        .login-container:hover .login-header {
+            transform: translateY(0px);
+        }
+
+        .login-container:hover .input-container {
+            opacity: 1;
+            height: auto;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="bg-animation"></div>
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-lock"></i> Login
+        </div>
+        <div class="input-container">
+            <div class="input-box">
+                <input type="text" placeholder="Username">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password">
+                <i class="fas fa-lock"></i>
+            </div>
+            <button class="login-btn">Sign In</button>
+            <div class="signup-link">
+                Don't have an account? <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Custom cursor follow effect
+        const cursor = document.querySelector('.cursor');
+        const bgAnimation = document.querySelector('.bg-animation');
+        
+        document.addEventListener('mousemove', (e) => {
+            // Move custom cursor
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            // Move background gradient with cursor
+            bgAnimation.style.background = `
+                radial-gradient(
+                    circle at ${e.clientX/window.innerWidth*100}% ${e.clientY/window.innerHeight*100}%,
+                    rgba(255, 140, 0, 0.2) 0%,
+                    transparent 70%
+                )
+            `;
+            
+            // Enhance glow when near login container
+            const loginContainer = document.querySelector('.login-container');
+            const rect = loginContainer.getBoundingClientRect();
+            const distance = Math.sqrt(
+                Math.pow(e.clientX - (rect.left + rect.width/2), 2) + 
+                Math.pow(e.clientY - (rect.top + rect.height/2), 2)
+            );
+            
+            if (distance < 300) {
+                const intensity = 1 - (distance/300);
+                loginContainer.style.boxShadow = `0 0 ${30 + intensity*20}px rgba(255, 140, 0, ${0.2 + intensity*0.3})`;
+                cursor.style.transform = `translate(-50%, -50%) scale(${1 + intensity*0.5})`;
+            } else {
+                loginContainer.style.boxShadow = '0 0 30px rgba(255, 140, 0, 0.2)';
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            }
+        });
+
+        // Click effects
+        document.addEventListener('click', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(0.7)';
+            setTimeout(() => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
