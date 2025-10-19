@@ -288,9 +288,7 @@ Background: rgb(255 0 0 / var(--tw-bg-opacity, 1));
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="services.html">Service</a></li>
-      <li><a href="blogs/index.html">Blogs</a></li>
       <li><a href="contact.html">Contact Us <span class="cta-icon">&#8594;</span></a></li>
     </ul>
   </div>
@@ -1856,7 +1854,7 @@ Have a question or want to book your car? Fill out the form below and our team w
 <div class="mt-8">
 <h4 class="font-medium mb-4">Connect With Us</h4>
 <div class="flex space-x-4">
-<a href="https://www.instagram.com/crs" class="w-10 h-10 flex items-center justify-center bg-red-400 rounded-full hover:bg-red-500/20 transition-colors">
+<a href="https://www.instagram.com/carryrentalservices/" class="w-10 h-10 flex items-center justify-center bg-red-400 rounded-full hover:bg-red-500/20 transition-colors">
 <i class="ri-instagram-fill text-red-500"></i>
 </a>
 <a href="#" class="w-10 h-10 flex items-center justify-center bg-red-400 rounded-full hover:bg-red-500/20 transition-colors">
@@ -2011,11 +2009,30 @@ Have a question or want to book your car? Fill out the form below and our team w
           </div>
           <!-- Social -->
           <div class="flex justify-center gap-3 mt-4">
-            <a href="https://www.instagram.com/crs" class="text-pink-500 text-2xl bg-white rounded-full p-2"><i class="ri-instagram-fill"></i></a>
-            <a href="#" class="text-red-600 text-2xl bg-white rounded-full p-2"><i class="ri-pinterest-fill"></i></a>
-            <a href="#" class="text-sky-500 text-2xl bg-white rounded-full p-2"><i class="ri-twitter-x-fill"></i></a>
-            <a href="#" class="text-red-600 text-2xl bg-white rounded-full p-2"><i class="ri-youtube-fill"></i></a>
-            <a href="#" class="text-red-700 text-2xl bg-white rounded-full p-2"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://www.instagram.com/carryrentalservices/" 
+   class="relative flex items-center gap-2 px-5 py-2 rounded-full overflow-hidden shadow-md" 
+   style="font-family: 'Poppins', sans-serif; background: #fff;">
+  
+  <!-- Rotating light border -->
+  <span class="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 animate-spin-slow"></span>
+  
+  <!-- Inner content -->
+  <span class="relative bg-white rounded-full flex items-center gap-2 px-4 py-2">
+    <i class="ri-instagram-fill text-2xl text-pink-600"></i>
+    <span class="text-pink-600">Instagram</span>
+  </span>
+</a>
+
+<style>
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+</style>
+
           </div>
         </div>
       </div>
