@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Agreement - Carry Rental Services</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read our rental terms and user agreement. Carry Rental Services offers transparent and safe car rental services in Rajasthan.">
+    <meta name="keywords" content="car rental agreement, rental terms, CRS agreement, car rental policy">
+    <meta name="author" content="Carry Rental Services">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#034bc0", secondary: "#4B4B4B" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="icon" type="image/png" href="assets/favicon-rc-new.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/favicon-rc-new.png">
+    <link rel="shortcut icon" href="assets/favicon-rc-new.png">
+
+    <style>
+      body {
+          font-family: 'Montserrat', sans-serif;
+          scroll-behavior: smooth;
+          background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+          min-height: 100vh;
+      }
+
+      .nav-cta, .floating-call {
+        background-color: #e31919 !important;
+      }
+      .nav-cta:hover {
+        background-color: #950f0f !important;
+      }
+      .crs-btn {
+        background-color: #e31919 !important;
+      }
+      .crs-btn-dark {
+        background-color: #b71414 !important;
+      }
+
+      /* Agreement Page Styles */
+      .agreement-wrapper {
+          padding-top: 140px;
+          padding-bottom: 80px;
+      }
+
+      .agreement-container {
+          max-width: 1000px;
+          margin: 0 auto;
+          background: white;
+          border-radius: 20px;
+          padding: 50px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      }
+
+      .page-heading {
+          text-align: center;
+          margin-bottom: 30px;
+      }
+
+      .page-heading h1 {
+          font-size: 36px;
+          color: #8B0000;
+          margin-bottom: 15px;
+          font-weight: 700;
+      }
+
+      .page-heading p {
+          font-size: 16px;
+          color: #555;
+          line-height: 1.8;
+          max-width: 800px;
+          margin: 0 auto;
+      }
+
+      .divider {
+          width: 80px;
+          height: 4px;
+          background: linear-gradient(90deg, #8B0000, #DC143C);
+          margin: 30px auto;
+          border-radius: 2px;
+      }
+
+      .terms-section {
+          margin: 40px 0;
+      }
+
+      .term-item {
+          margin-bottom: 35px;
+          padding: 25px;
+          background: #f9f9f9;
+          border-radius: 12px;
+          border-left: 5px solid #DC143C;
+          transition: all 0.3s;
+      }
+
+      .term-item:hover {
+          box-shadow: 0 5px 20px rgba(220, 20, 60, 0.1);
+          transform: translateX(5px);
+      }
+
+      .term-heading {
+          font-size: 20px;
+          color: #8B0000;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 600;
+      }
+
+      .term-heading span {
+          background: #DC143C;
+          color: white;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: bold;
+          flex-shrink: 0;
+      }
+
+      .term-content {
+          color: #444;
+          line-height: 1.8;
+          font-size: 15px;
+      }
+
+      .term-content ul {
+          margin-left: 20px;
+          margin-top: 10px;
+          list-style: none;
+      }
+
+      .term-content li {
+          margin: 8px 0;
+          position: relative;
+          padding-left: 20px;
+      }
+
+      .term-content li::before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: #DC143C;
+          font-weight: bold;
+      }
+
+      .note-box {
+          background: #fff3cd;
+          border: 2px solid #ffc107;
+          border-radius: 10px;
+          padding: 20px;
+          margin: 30px 0;
+      }
+
+      .note-box strong {
+          color: #8B0000;
+          font-size: 18px;
+          display: block;
+          margin-bottom: 10px;
+      }
+
+      .note-box p {
+          color: #666;
+          line-height: 1.7;
+      }
+
+      .agreement-footer {
+          background: linear-gradient(135deg, #8B0000, #DC143C);
+          color: white;
+          padding: 25px;
+          border-radius: 12px;
+          text-align: center;
+          margin-top: 40px;
+          font-size: 16px;
+          line-height: 1.6;
+      }
+
+      .agreement-footer strong {
+          font-size: 20px;
+          display: block;
+          margin-bottom: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+          .agreement-wrapper {
+              padding-top: 100px;
+              padding-bottom: 60px;
+          }
+
+          .agreement-container {
+              margin: 0 20px;
+              padding: 30px 20px;
+          }
+
+          .page-heading h1 {
+              font-size: 28px;
+          }
+
+          .term-item {
+              padding: 20px 15px;
+          }
+
+          .term-heading {
+              font-size: 18px;
+          }
+
+          .term-heading span {
+              width: 30px;
+              height: 30px;
+              font-size: 14px;
+          }
+      }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    
+<!-- HEADER START -->
+<header class="header-bar">
+  <nav class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/carryrentalservices-logo.png" alt="Carry Rental Services" class="logo-img">
+      <span class="logo-text"></span>
+    </a>
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      <li class="nav-item dropdown">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="agreement.html" class="nav-link">Agreement</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="services.html" class="nav-link">Service</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <!-- Right CTA Button -->
+    <a href="https://wa.me/918003990475?text=I'm%20interested%20in%20Car%20Rental%20Services" class="nav-cta">Book Your Ride <span class="cta-icon">&#8594;</span></a>
+    <!-- Hamburger Icon -->
+    <div class="nav-hamburger" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="agreement.html">Agreement</a></li>
+      <li><a href="services.html">Service</a></li>
+      <li><a href="contact.html">Contact <span class="cta-icon">&#8594;</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+/* Header Section */
+.header-bar {
+  position: fixed;
+  top: 24px;
+  left: 0; right: 0;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.nav-container {
+  width: 90vw;
+  max-width: 1300px;
+  background: #fff;
+  border-radius: 48px;
+  box-shadow: 0 6px 32px 0 rgba(32, 50, 90, 0.10);
+  display: flex;
+  align-items: center;
+  padding: 0 32px 0 18px;
+  min-height: 74px;
+  pointer-events: auto;
+  gap: 20px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-right: 22px;
+}
+.logo-img {
+  max-height: 44px;
+  min-width: 44px;
+}
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-top: 1px;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 0 16px;
+  padding: 0;
+  flex: 1 1 auto;
+}
+.nav-item {
+  position: relative;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+  color: #202834;
+  padding: 16px 18px 16px 12px;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: background 0.18s;
+}
+.nav-link:hover {
+  background: #ecf0fa;
+  color: #e31919;
+}
+.nav-cta {
+  background: #256eff;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 20px 0 rgba(32, 58, 255, 0.11);
+}
+.cta-icon {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 46px; width: 46px;
+  border-radius: 100%;
+  margin-left: 18px;
+  transition: background 0.2s;
+}
+.nav-hamburger:hover { background: #f4f7fb;}
+.nav-hamburger span {
+  display: block;
+  background: #222;
+  height: 4px; width: 28px;
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: all 0.23s;
+}
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 100px; left: 0; right: 0;
+  background: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.09);
+  z-index: 9999;
+  border-radius: 0 0 32px 32px;
+  padding: 22px 0 26px 0;
+  pointer-events: auto;
+}
+.mobile-menu ul {
+  width: 95vw;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mobile-menu li a, .mobile-menu li {
+  display: block;
+  padding: 14px 10px;
+  color: #2d3652;
+  font-size: 18px;
+  text-align: left;
+  border-radius: 22px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0;
+  transition: background 0.16s, color 0.12s;
+}
+.mobile-menu li a:hover {
+  background: #ecf0fa;
+  color: #e31919;
+}
+.mobile-menu .cta-icon {
+  margin-left: 8px;
+}
+@media (max-width: 1100px) {
+  .nav-container { width: 98vw; min-width: unset;}
+}
+@media (max-width: 900px) {
+  .nav-container { padding: 0 12px; }
+  .logo-text { font-size: 1.35rem; }
+  .nav-link { font-size: 16px; padding: 16px 10px;}
+  .nav-cta { font-size: 15px; padding: 11px 18px; margin-left: 12px;}
+}
+@media (max-width: 800px) {
+  .nav-menu { gap: 3px; }
+  .nav-container { gap:10px;}
+}
+@media (max-width: 700px) {
+  .nav-container { min-height: 58px; border-radius: 36px;}
+  .nav-logo .logo-img { max-height: 38px;}
+}
+@media (max-width: 650px) {
+  .nav-menu, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .mobile-menu { border-radius: 0 0 16px 16px; }
+  .header-bar {top:10px;}
+}
+</style>
+
+<!-- Main Content -->
+<div class="agreement-wrapper">
+    <div class="agreement-container">
+        <div class="page-heading">
+            <h1>Rental Terms & User Agreement</h1>
+            <div class="divider"></div>
+            <p>By renting a vehicle from Carry Rental Services (CRS), you agree to abide by the following terms and conditions. Our goal is to ensure a safe, transparent, and enjoyable experience for every customer.</p>
+        </div>
+
+        <div class="terms-section">
+            <!-- Term 1 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>1</span>
+                    <h3>Required Documents</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Valid Driving License</li>
+                        <li>Aadhaar Card or any government-approved ID proof</li>
+                        <li>Photocopy or digital copy required during car handover</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 2 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>2</span>
+                    <h3>Payment & Security Deposit</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Full rental amount to be paid before car handover</li>
+                        <li>A refundable security deposit may apply based on the car model</li>
+                        <li>Refunds are processed within 24–48 hours after vehicle return and inspection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 3 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>3</span>
+                    <h3>Fuel & Mileage Policy</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>The car is provided with 2 liters of fuel at the time of handover</li>
+                        <li>Customers must return the vehicle with the same 2 liters fuel level</li>
+                        <li>Additional fuel charges apply if returned with less fuel than provided</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 4 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>4</span>
+                    <h3>Damage & Liability</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Any external damage (scratches, dents, body damage) will incur a flat charge of ₹5,000</li>
+                        <li>In case of major accidents, the renter is fully responsible for all repair costs</li>
+                        <li>Insurance does NOT cover accident damages - renter must bear complete repair expenses</li>
+                        <li>Interior damage (seats, dashboard, upholstery) will be charged separately as per actual damage</li>
+                        <li>Vehicle inspection will be done before and after rental to document any damages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 5 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>5</span>
+                    <h3>Late Return Policy</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Extra charges apply for late returns (₹300/hour or part thereof)</li>
+                        <li>Early returns are non-refundable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 6 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>6</span>
+                    <h3>Driving Rules & Traffic Violations</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Only the registered renter is allowed to drive the car</li>
+                        <li>Over-speeding, rash driving, or illegal activities are strictly prohibited</li>
+                        <li>Use of alcohol or drugs while driving is not allowed under any circumstances</li>
+                        <li>Any traffic challan or fine received during rental period must be paid by the renter immediately</li>
+                        <li>If any illegal activity is detected or reported, the case will be directly reported to the police authorities</li>
+                        <li>Violation of traffic rules may result in immediate termination of rental without refund</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Term 7 -->
+            <div class="term-item">
+                <div class="term-heading">
+                    <span>7</span>
+                    <h3>Cancellation & Refund Policy</h3>
+                </div>
+                <div class="term-content">
+                    <ul>
+                        <li>Cancellations before 12 hours of booking – full refund</li>
+                        <li>After 12 hours – 50% amount will be deducted</li>
+                        <li>No refund for same-day cancellations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note Box -->
+        <div class="note-box">
+            <strong>📋 Note:</strong>
+            <p>Carry Rental Services reserves the right to modify, refuse, or cancel any booking in case of misuse, invalid documents, or unforeseen circumstances.</p>
+        </div>
+
+        <!-- Agreement Footer -->
+        <div class="agreement-footer">
+            <strong>🚗 Final Confirmation</strong>
+            By booking a car with Carry Rental Services, you confirm that you have read and agreed to the above rental terms and policies.
+        </div>
+    </div>
+</div>
+
+<script>
+const hamburger = document.getElementById("hamburger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+let menuOpen = false;
+
+hamburger.addEventListener("click", () => {
+  menuOpen = !menuOpen;
+  mobileMenu.style.display = menuOpen ? "flex" : "none";
+});
+
+window.addEventListener('resize', function() {
+  if(window.innerWidth > 650){
+    mobileMenu.style.display = 'none';
+    menuOpen = false;
+  }
+});
+
+mobileMenu.querySelectorAll('a').forEach(link =>
+  link.addEventListener('click', () => { 
+    mobileMenu.style.display = 'none'; 
+    menuOpen = false; 
+  })
+);
+</script>
+
+</body>
+</html>
