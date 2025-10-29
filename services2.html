@@ -1,754 +1,294 @@
 <!DOCTYPE html>
 <html lang="en" class="overflow-x-hidden">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
-    <title>Self Drive Car Rental Rajasthan | Hourly Daily Monthly | Carry Rental Services</title>
-    <meta name="description" content="Premium self drive car rentals in Abu Road, Mount Abu, Gangapur City. Flexible hourly, daily, weekly & monthly plans. No driver. Book sedan, SUV, luxury cars for outstation trips, business travel & personal use. Best rates in Rajasthan.">
-    <meta name="keywords" content="self drive car rental rajasthan, car rental abu road, mount abu car hire, gangapur city car rental, hourly car rental, daily car rental, monthly car rental, outstation car booking, business car rental, self drive without driver, car hire sawai madhopur, rent car rajasthan">
-    <meta name="author" content="Carry Rental Services">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://crs.in/services.html">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Self Drive Car Rental in Rajasthan | Hourly, Daily, Monthly Plans">
-    <meta property="og:description" content="Freedom to drive your way. Self-drive cars for any duration - hours, days, weeks, or months. Serving Abu Road, Mount Abu, Gangapur City & across Rajasthan.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://crs.in/services.html">
-    <meta property="og:image" content="https://crs.in/images/og-image.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Self Drive Car Rental Rajasthan | Carry Rental Services">
-    <meta name="twitter:description" content="Premium self drive car rentals. Hourly, daily, monthly plans available.">
-
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
-    <link rel="icon" type="image/png" href="assets/favicon-rc-new.png" sizes="192x192">
-    <link rel="shortcut icon" href="assets/favicon-rc-new.png">
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-          font-family: 'Montserrat', sans-serif;
-          scroll-behavior: smooth;
-          overflow-x: hidden;
-          background: #fff;
-      }
-
-      /* Animated Background */
-      .animated-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        overflow: hidden;
-      }
-
-      .animated-bg::before {
-        content: '';
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        top: -50%;
-        left: -50%;
-        background: radial-gradient(circle, rgba(227, 25, 25, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-        animation: moveGrid 20s linear infinite;
-      }
-
-      @keyframes moveGrid {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(50px, 50px); }
-      }
-
-      .nav-cta {
-        background-color: #e31919 !important;
-      }
-      .nav-cta:hover {
-        background-color: #950f0f !important;
-      }
-
-      /* Hero Section with Particles */
-      .hero-section {
-          background: linear-gradient(135deg, rgba(139, 0, 0, 0.96), rgba(220, 20, 60, 0.88)),
-                      url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=80');
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-          min-height: 85vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: white;
-          padding: 160px 20px 100px 20px;
-          position: relative;
-          overflow: hidden;
-      }
-
-      .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-        animation: pulse 8s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
-      }
-
-      .hero-content {
-          max-width: 1000px;
-          z-index: 10;
-          position: relative;
-      }
-
-      .hero-title {
-          font-size: 64px;
-          font-weight: 900;
-          margin-bottom: 25px;
-          line-height: 1.15;
-          text-shadow: 3px 5px 10px rgba(0,0,0,0.4);
-          animation: fadeInUp 1s ease;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero-subtitle {
-          font-size: 28px;
-          font-weight: 600;
-          margin-bottom: 18px;
-          opacity: 0.95;
-          letter-spacing: 0.5px;
-          animation: fadeInUp 1.2s ease;
-      }
-
-      .hero-description {
-          font-size: 19px;
-          margin-bottom: 40px;
-          opacity: 0.92;
-          line-height: 1.7;
-          animation: fadeInUp 1.4s ease;
-      }
-
-      .hero-buttons {
-          display: flex;
-          gap: 25px;
-          justify-content: center;
-          flex-wrap: wrap;
-          animation: fadeInUp 1.6s ease;
-      }
-
-      .btn-primary {
-          background: white;
-          color: #8B0000;
-          padding: 18px 45px;
-          border-radius: 50px;
-          font-size: 19px;
-          font-weight: 700;
-          text-decoration: none;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 10px 30px rgba(255,255,255,0.35);
-          display: inline-flex;
-          align-items: center;
-          gap: 12px;
-      }
-
-      .btn-primary:hover {
-          transform: translateY(-4px) scale(1.03);
-          box-shadow: 0 15px 40px rgba(255,255,255,0.5);
-      }
-
-      .btn-secondary {
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
-          color: white;
-          padding: 18px 45px;
-          border-radius: 50px;
-          font-size: 19px;
-          font-weight: 700;
-          text-decoration: none;
-          border: 3px solid rgba(255, 255, 255, 0.8);
-          transition: all 0.4s;
-      }
-
-      .btn-secondary:hover {
-          background: white;
-          color: #8B0000;
-          border-color: white;
-      }
-
-      /* Floating Elements */
-      .floating {
-        animation: floating 3s ease-in-out infinite;
-      }
-
-      @keyframes floating {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-
-      /* Section Styles */
-      .section {
-          padding: 100px 20px;
-          position: relative;
-      }
-
-      .section-title {
-          font-size: 48px;
-          font-weight: 900;
-          text-align: center;
-          background: linear-gradient(135deg, #8B0000, #DC143C);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 20px;
-      }
-
-      .section-subtitle {
-          font-size: 19px;
-          text-align: center;
-          color: #666;
-          margin-bottom: 70px;
-          max-width: 750px;
-          margin-left: auto;
-          margin-right: auto;
-          line-height: 1.6;
-      }
-
-      .container {
-          max-width: 1300px;
-          margin: 0 auto;
-      }
-
-      /* Stats Section */
-      .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 40px;
-          margin: 60px 0;
-      }
-
-      .stat-card {
-          text-align: center;
-          padding: 30px;
-          background: white;
-          border-radius: 20px;
-          box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-          transition: all 0.4s;
-          border-top: 4px solid #DC143C;
-      }
-
-      .stat-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 50px rgba(220, 20, 60, 0.2);
-      }
-
-      .stat-number {
-          font-size: 52px;
-          font-weight: 900;
-          background: linear-gradient(135deg, #8B0000, #DC143C);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 10px;
-      }
-
-      .stat-label {
-          font-size: 16px;
-          color: #666;
-          font-weight: 600;
-      }
-
-      /* Features Grid */
-      .features-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 35px;
-          margin-top: 60px;
-      }
-
-      .feature-card {
-          background: white;
-          padding: 40px 30px;
-          border-radius: 20px;
-          text-align: center;
-          box-shadow: 0 8px 35px rgba(0,0,0,0.1);
-          transition: all 0.4s;
-          border: 2px solid transparent;
-          position: relative;
-          overflow: hidden;
-      }
-
-      .feature-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background: linear-gradient(90deg, #DC143C, #FF1744);
-      }
-
-      .feature-card:hover {
-          transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 20px 50px rgba(220, 20, 60, 0.25);
-          border-color: #DC143C;
-      }
-
-      .feature-icon {
-          font-size: 60px;
-          margin-bottom: 25px;
-          display: inline-block;
-          animation: bounce 2s infinite;
-      }
-
-      @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-
-      .feature-title {
-          font-size: 22px;
-          font-weight: 800;
-          color: #222;
-          margin-bottom: 15px;
-      }
-
-      .feature-desc {
-          font-size: 16px;
-          color: #666;
-          line-height: 1.7;
-      }
-
-      /* Services Grid */
-      .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 40px;
-          margin-top: 60px;
-      }
-
-      .service-card {
-          background: white;
-          border-radius: 25px;
-          overflow: hidden;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-          transition: all 0.4s;
-          border: 3px solid transparent;
-      }
-
-      .service-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 20px 60px rgba(220, 20, 60, 0.25);
-          border-color: #DC143C;
-      }
-
-      .service-icon-box {
-          background: linear-gradient(135deg, #DC143C, #8B0000);
-          padding: 50px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-      }
-
-      .service-icon-box::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 70%);
-          animation: rotate 15s linear infinite;
-      }
-
-      @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-      }
-
-      .service-icon-box svg {
-          width: 80px;
-          height: 80px;
-          color: white;
-          position: relative;
-          z-index: 2;
-      }
-
-      .service-content {
-          padding: 35px;
-      }
-
-      .service-title {
-          font-size: 24px;
-          font-weight: 800;
-          color: #8B0000;
-          margin-bottom: 18px;
-      }
-
-      .service-desc {
-          font-size: 16px;
-          color: #555;
-          line-height: 1.8;
-          margin-bottom: 25px;
-      }
-
-      .service-features {
-          list-style: none;
-          padding: 0;
-      }
-
-      .service-features li {
-          padding: 10px 0;
-          color: #666;
-          font-size: 15px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-weight: 500;
-      }
-
-      .service-features li::before {
-          content: "✓";
-          color: #DC143C;
-          font-weight: bold;
-          font-size: 18px;
-          background: rgba(220, 20, 60, 0.1);
-          width: 28px;
-          height: 28px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-      }
-
-      /* Rental Plans */
-      .rental-plans {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 35px;
-          margin-top: 60px;
-      }
-
-      .plan-card {
-          background: white;
-          padding: 45px 35px;
-          border-radius: 25px;
-          text-align: center;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-          transition: all 0.4s;
-          border: 3px solid #f0f0f0;
-          position: relative;
-      }
-
-      .plan-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 60px rgba(220, 20, 60, 0.2);
-          border-color: #DC143C;
-      }
-
-      .plan-badge {
-          position: absolute;
-          top: -15px;
-          right: 30px;
-          background: linear-gradient(135deg, #DC143C, #FF1744);
-          color: white;
-          padding: 8px 20px;
-          border-radius: 50px;
-          font-size: 13px;
-          font-weight: 700;
-          box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
-      }
-
-      .plan-icon {
-          font-size: 55px;
-          margin-bottom: 20px;
-      }
-
-      .plan-title {
-          font-size: 26px;
-          font-weight: 800;
-          color: #222;
-          margin-bottom: 15px;
-      }
-
-      .plan-desc {
-          font-size: 15px;
-          color: #666;
-          margin-bottom: 25px;
-          line-height: 1.6;
-      }
-
-      .plan-price {
-          font-size: 38px;
-          font-weight: 900;
-          background: linear-gradient(135deg, #8B0000, #DC143C);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 10px;
-      }
-
-      .plan-period {
-          font-size: 14px;
-          color: #999;
-          margin-bottom: 25px;
-      }
-
-      .plan-features {
-          list-style: none;
-          padding: 0;
-          margin: 25px 0;
-          text-align: left;
-      }
-
-      .plan-features li {
-          padding: 10px 0;
-          color: #555;
-          font-size: 15px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-      }
-
-      .plan-features li::before {
-          content: "✓";
-          color: #DC143C;
-          font-weight: bold;
-      }
-
-      /* CTA Section */
-      .cta-section {
-          background: linear-gradient(135deg, #8B0000, #DC143C);
-          padding: 100px 20px;
-          text-align: center;
-          color: white;
-          position: relative;
-          overflow: hidden;
-      }
-
-      .cta-section::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 2%);
-          background-size: 50px 50px;
-          animation: movePattern 20s linear infinite;
-      }
-
-      @keyframes movePattern {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(50px, 50px); }
-      }
-
-      .cta-content {
-          position: relative;
-          z-index: 2;
-      }
-
-      .cta-title {
-          font-size: 48px;
-          font-weight: 900;
-          margin-bottom: 25px;
-          text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-      }
-
-      .cta-desc {
-          font-size: 22px;
-          margin-bottom: 40px;
-          opacity: 0.95;
-          line-height: 1.6;
-      }
-
-      /* Footer */
-      .footer {
-          background: linear-gradient(135deg, #1a1a2e, #16213e);
-          color: white;
-          padding: 80px 20px 30px;
-          position: relative;
-          overflow: hidden;
-      }
-
-      .footer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #DC143C, #FF1744, #DC143C);
-          animation: shimmer 3s linear infinite;
-      }
-
-      @keyframes shimmer {
-          0% { background-position: -1000px; }
-          100% { background-position: 1000px; }
-      }
-
-      .footer-content {
-          max-width: 1300px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 50px;
-          margin-bottom: 50px;
-      }
-
-      .footer-section h3 {
-          font-size: 22px;
-          font-weight: 800;
-          margin-bottom: 25px;
-          color: #DC143C;
-      }
-
-      .footer-section p,
-      .footer-section a {
-          color: rgba(255,255,255,0.8);
-          line-height: 1.8;
-          font-size: 15px;
-          text-decoration: none;
-          display: block;
-          margin-bottom: 12px;
-          transition: all 0.3s;
-      }
-
-      .footer-section a:hover {
-          color: #DC143C;
-          padding-left: 5px;
-      }
-
-      .footer-bottom {
-          text-align: center;
-          padding-top: 30px;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          color: rgba(255,255,255,0.6);
-          font-size: 14px;
-      }
-
-      .social-links {
-          display: flex;
-          gap: 15px;
-          margin-top: 20px;
-      }
-
-      .social-links a {
-          width: 45px;
-          height: 45px;
-          background: rgba(220, 20, 60, 0.2);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          transition: all 0.3s;
-      }
-
-      .social-links a:hover {
-          background: #DC143C;
-          transform: translateY(-5px);
-      }
-
-      /* Scroll Progress */
-      .scroll-progress {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 0%;
-          height: 5px;
-          background: linear-gradient(90deg, #DC143C, #FF1744);
-          z-index: 10000;
-          transition: width 0.1s ease;
-          box-shadow: 0 2px 10px rgba(220, 20, 60, 0.5);
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-          .hero-title { font-size: 42px; }
-          .hero-subtitle { font-size: 22px; }
-          .hero-description { font-size: 17px; }
-          .section-title { font-size: 36px; }
-          .section { padding: 60px 20px; }
-          .hero-buttons { flex-direction: column; }
-          .btn-primary, .btn-secondary {
-              width: 100%;
-              justify-content: center;
-          }
-          .cta-title { font-size: 36px; }
-          .services-grid,
-          .rental-plans {
-              grid-template-columns: 1fr;
-          }
-      }
-    </style>
-
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CarRental",
-      "name": "Carry Rental Services",
-      "description": "Premium self drive car rental services in Rajasthan - hourly, daily, weekly, monthly rentals available",
-      "url": "https://crs.in",
-      "telephone": "+91-8003990475",
-      "email": "carryrentalservices@gmail.com",
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "Abu Road",
-          "addressLocality": "Mount Abu",
-          "addressRegion": "Rajasthan",
-          "addressCountry": "IN"
-        },
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "Gangapur City",
-          "addressLocality": "Sawai Madhopur",
-          "addressRegion": "Rajasthan",
-          "addressCountry": "IN"
-        }
-      ],
-      "priceRange": "₹₹",
-      "areaServed": ["Abu Road", "Mount Abu", "Gangapur City", "Sawai Madhopur", "Rajasthan", "Udaipur", "Jaipur"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "156"
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Self Drive Car Rental Rajasthan | Abu Road, Mount Abu, Gangapur City | Carry Rental Services</title>
+  <meta name="description" content="Self drive car rental in Abu Road & Mount Abu, and Gangapur City (Sawai Madhopur). Hourly, daily, weekly & monthly plans — car-wise pricing (Thar, Fortuner, Swift, etc.). WhatsApp booking, 24×7 support, delivery across Rajasthan." />
+  <meta name="keywords" content="self drive car rental rajasthan, self drive abu road, mount abu self drive car, gangapur city car rental, sawai madhopur car hire, hourly car rental, daily car rental, monthly self drive, thar rental, fortuner rental, swift rental" />
+  <meta name="author" content="Carry Rental Services" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://crs.in/services.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Self Drive Car Rental in Rajasthan — Abu Road, Mount Abu & Gangapur City" />
+  <meta property="og:description" content="Drive your way. Hourly, daily, weekly & monthly plans with car-wise pricing. WhatsApp to book. Delivery across Rajasthan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crs.in/services.html" />
+  <meta property="og:image" content="https://crs.in/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Self Drive Car Rental Rajasthan | Carry Rental Services" />
+  <meta name="twitter:description" content="Premium self-drive cars with flexible plans. Car-wise pricing. 24×7 support." />
+
+  <!-- Preloads -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com/3.4.16" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon-rc-new.png" sizes="192x192">
+  <link rel="shortcut icon" href="assets/favicon-rc-new.png">
+
+  <style>
+    :root{
+      --maroon-600:#8B0000; --maroon-700:#740000; --maroon-800:#5a0000; --maroon-900:#3b0000;
+      --ink:#202834; --soft:#f5f7fa;
     }
-    </script>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Montserrat',sans-serif;scroll-behavior:smooth;overflow-x:hidden;background:#fff;color:#222}
+
+    /* Animated Background */
+    .animated-bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);overflow:hidden}
+    .animated-bg::before{content:'';position:absolute;inset:-50%;width:200%;height:200%;
+      background:radial-gradient(circle,rgba(139,0,0,0.05) 1px,transparent 1px);
+      background-size:50px 50px;animation:moveGrid 20s linear infinite}
+    @keyframes moveGrid{0%{transform:translate(0,0)}100%{transform:translate(50px,50px)}}
+
+    /* Header */
+    .header-bar{position:fixed;top:24px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none}
+    .nav-container{width:90vw;max-width:1300px;pointer-events:auto;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+      border-radius:48px;box-shadow:0 8px 40px rgba(32,50,90,.12);display:flex;align-items:center;gap:20px;min-height:74px;padding:0 32px 0 18px}
+    .nav-logo{display:flex;align-items:center;gap:.6em;margin-right:22px}
+    .logo-img{max-height:44px;min-width:44px}
+    .nav-menu{display:flex;align-items:center;gap:8px;list-style:none;margin:0 0 0 16px;padding:0;flex:1 1 auto}
+    .nav-link{display:flex;align-items:center;font-size:17px;font-weight:600;color:#202834;padding:16px 18px 16px 12px;border-radius:32px;text-decoration:none;transition:all .3s}
+    .nav-link:hover{background:#f6eaee;color:var(--maroon-600)}
+    .nav-cta{background:var(--maroon-600);color:#fff;font-size:18px;padding:12px 28px;border-radius:999px;font-weight:700;margin-left:24px;display:flex;align-items:center;text-decoration:none;gap:8px;transition:all .3s}
+    .nav-cta:hover{background:var(--maroon-700);transform:translateY(-2px)}
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;cursor:pointer;height:46px;width:46px;border-radius:100%;margin-left:18px}
+    .nav-hamburger span{background:#222;height:4px;width:28px;border-radius:2px;margin:3px 0}
+    .mobile-menu{display:none;position:fixed;top:100px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);z-index:9999;border-radius:0 0 32px 32px;padding:22px 0;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .mobile-menu ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;max-width:360px;margin:0 auto}
+    .mobile-menu li a{display:block;padding:14px 10px;color:#2d3652;font-size:18px;border-radius:22px;text-decoration:none;font-weight:600}
+    @media(max-width:650px){.nav-menu,.nav-cta{display:none}.nav-hamburger{display:flex}.header-bar{top:10px}}
+
+    /* Hero */
+    .hero-section{
+      background:
+      linear-gradient(135deg, rgba(139,0,0,0.96), rgba(220,20,60,0.88)),
+      url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=80') center/cover fixed no-repeat;
+      min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      padding:160px 20px 100px;position:relative;overflow:hidden
+    }
+    .hero-section::before{content:'';position:absolute;inset:0;background:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,.08) 0%, transparent 50%);animation:pulse 8s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+    .hero-content{max-width:1000px;position:relative;z-index:1}
+    .hero-title{font-size:64px;font-weight:900;margin-bottom:25px;line-height:1.15;text-shadow:3px 5px 10px rgba(0,0,0,.4);animation:fadeInUp 1s ease}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-subtitle{font-size:28px;font-weight:600;margin-bottom:18px;letter-spacing:.5px;animation:fadeInUp 1.2s ease}
+    .hero-description{font-size:19px;margin-bottom:40px;line-height:1.7;animation:fadeInUp 1.4s ease}
+    .hero-buttons{display:flex;gap:25px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1.6s ease}
+    .btn-primary{background:#fff;color:var(--maroon-600);padding:18px 45px;border-radius:50px;font-size:19px;font-weight:800;text-decoration:none;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 10px 30px rgba(255,255,255,.35);display:inline-flex;align-items:center;gap:12px}
+    .btn-primary:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 15px 40px rgba(255,255,255,.5)}
+    .btn-secondary{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);color:#fff;padding:18px 45px;border-radius:50px;font-size:19px;font-weight:800;text-decoration:none;border:3px solid rgba(255,255,255,.8);transition:all .4s}
+    .btn-secondary:hover{background:#fff;color:var(--maroon-600);border-color:#fff}
+
+    /* Sections */
+    .section{padding:100px 20px;position:relative}
+    .section-title{font-size:48px;font-weight:900;text-align:center;margin-bottom:20px;background:linear-gradient(135deg,var(--maroon-600),#DC143C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .section-subtitle{font-size:19px;text-align:center;color:#666;margin:0 auto 70px;max-width:750px;line-height:1.6}
+    .container{max-width:1300px;margin:0 auto}
+
+    /* Cards / Grids */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin:60px 0}
+    .stat-card{padding:30px;text-align:center;background:#fff;border-radius:20px;border-top:4px solid #DC143C;box-shadow:0 8px 30px rgba(0,0,0,.08);transition:.4s}
+    .stat-card:hover{transform:translateY(-10px);box-shadow:0 15px 50px rgba(220,20,60,.2)}
+    .stat-number{font-size:52px;font-weight:900;background:linear-gradient(135deg,var(--maroon-600),#DC143C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+    .stat-label{font-size:16px;color:#666;font-weight:600}
+
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:35px;margin-top:60px}
+    .feature-card{background:#fff;padding:40px 30px;border-radius:20px;text-align:center;box-shadow:0 8px 35px rgba(0,0,0,.1);transition:.4s;border:2px solid transparent;position:relative;overflow:hidden}
+    .feature-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#DC143C,var(--maroon-600))}
+    .feature-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 50px rgba(220,20,60,.25);border-color:#DC143C}
+    .feature-title{font-size:22px;font-weight:800;margin-bottom:12px;color:#222}
+    .feature-desc{font-size:16px;color:#666;line-height:1.7}
+    .feature-icon{margin:0 auto 18px;display:inline-block}
+
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;margin-top:60px}
+    .service-card{background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.12);transition:.4s;border:3px solid transparent}
+    .service-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 60px rgba(220,20,60,.25);border-color:#DC143C}
+    .service-icon-box{background:linear-gradient(135deg,#DC143C,var(--maroon-600));padding:42px;text-align:center;position:relative;overflow:hidden}
+    .service-icon-box svg{width:72px;height:72px;color:#fff;position:relative;z-index:1}
+    .service-content{padding:35px}
+    .service-title{font-size:24px;font-weight:800;color:var(--maroon-600);margin-bottom:12px}
+    .service-desc{font-size:16px;color:#555;line-height:1.8;margin-bottom:18px}
+    .service-features{list-style:none;padding:0;margin:0}
+    .service-features li{padding:9px 0;color:#666;font-size:15px;display:flex;align-items:center;gap:10px;font-weight:500}
+    .service-features li::before{content:"";display:inline-block;width:22px;height:22px;min-width:22px;border-radius:50%;background:rgba(220,20,60,.12);border:2px solid #DC143C}
+    .pricing-note{margin-top:8px;font-size:14px;color:#7a7a7a}
+
+    .rental-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;margin-top:60px}
+    .plan-card{background:#fff;padding:45px 35px;border-radius:25px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.1);transition:.4s;border:3px solid #f0f0f0;position:relative}
+    .plan-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(220,20,60,.2);border-color:#DC143C}
+    .plan-badge{position:absolute;top:-15px;right:30px;background:linear-gradient(135deg,#DC143C,#FF1744);color:#fff;padding:8px 20px;border-radius:50px;font-size:13px;font-weight:700;box-shadow:0 5px 15px rgba(220,20,60,.4)}
+    .plan-icon{margin-bottom:14px}
+    .plan-title{font-size:26px;font-weight:800;color:#222;margin-bottom:10px}
+    .plan-desc{font-size:15px;color:#666;margin-bottom:16px;line-height:1.6}
+    .plan-price{font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--maroon-600),#DC143C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+    .plan-period{font-size:14px;color:#999;margin-bottom:16px}
+    .plan-features{list-style:none;padding:0;margin:20px 0;text-align:left}
+    .plan-features li{padding:9px 0;color:#555;font-size:15px;display:flex;align-items:center;gap:10px}
+    .plan-features li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#DC143C;margin-right:2px}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,var(--maroon-700),var(--maroon-600));padding:100px 20px;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cta-section::before{content:'';position:absolute;inset:-50%;background:radial-gradient(circle,rgba(255,255,255,0.1) 1%,transparent 2%);background-size:50px 50px;animation:movePattern 20s linear infinite}
+    @keyframes movePattern{0%{transform:translate(0,0)}100%{transform:translate(50px,50px)}}
+    .cta-content{position:relative;z-index:1}
+    .cta-title{font-size:48px;font-weight:900;margin-bottom:12px;text-shadow:2px 4px 8px rgba(0,0,0,.3)}
+    .cta-desc{font-size:20px;margin-bottom:32px;opacity:.95;line-height:1.6}
+
+    /* Footer */
+    .footer{background:linear-gradient(160deg,#1a0606 0%, #120202 40%, #2b0a0a 100%);color:#eee;padding:80px 20px 30px;position:relative;overflow:hidden}
+    .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ff6b6b,#e63946,#b81f24,#ff6b6b);background-size:300% 100%;animation:shimmer 6s linear infinite}
+    @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+    .footer-content{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:50px;margin-bottom:50px}
+    .footer-section h3{font-size:22px;font-weight:800;margin-bottom:22px;color:#ffb3b3}
+    .footer-section p,.footer-section a{color:rgba(255,255,255,.82);line-height:1.8;font-size:15px;text-decoration:none;display:block;margin-bottom:12px;transition:all .25s}
+    .footer-section a:hover{color:#ffd7d7;transform:translateX(4px)}
+    .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:14px}
+
+    /* Scroll Progress */
+    .scroll-progress{position:fixed;top:0;left:0;width:0%;height:5px;background:linear-gradient(90deg,#DC143C,var(--maroon-600));z-index:10000;transition:width .1s ease;box-shadow:0 2px 10px rgba(220,20,60,.5)}
+
+    /* Reveal on scroll base state */
+    .reveal{opacity:0;transform:translateY(30px);transition:all .6s ease}
+
+    /* Responsive */
+    @media (max-width:768px){
+      .hero-title{font-size:42px}
+      .hero-subtitle{font-size:22px}
+      .hero-description{font-size:17px}
+      .section-title{font-size:36px}
+      .section{padding:60px 20px}
+      .hero-buttons{flex-direction:column}
+      .btn-primary,.btn-secondary{width:100%;justify-content:center}
+      .cta-title{font-size:36px}
+      .services-grid,.rental-plans{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Schema: WebSite + CarRental + LocalBusiness(2) + FAQ + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Carry Rental Services",
+    "url":"https://crs.in",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://crs.in/search?q={query}",
+      "query-input":"required name=query"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CarRental",
+    "name":"Carry Rental Services",
+    "description":"Self drive car rental services in Rajasthan with hourly, daily, weekly, monthly plans. Car-wise pricing for each model.",
+    "url":"https://crs.in",
+    "telephone":"+91-8003990475",
+    "email":"carryrentalservices@gmail.com",
+    "priceRange":"₹₹",
+    "areaServed":["Abu Road","Mount Abu","Gangapur City","Sawai Madhopur","Udaipur","Jaipur","Rajasthan, IN"],
+    "sameAs":["https://facebook.com/carryrentalservices","https://instagram.com/carryrentalservices"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Carry Rental Services — Abu Road & Mount Abu",
+    "image":"https://crs.in/images/og-image.jpg",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Abu Road",
+      "addressLocality":"Mount Abu",
+      "addressRegion":"Rajasthan",
+      "addressCountry":"IN"
+    },
+    "telephone":"+91-8003990475",
+    "areaServed":["Abu Road","Mount Abu","Rajasthan"],
+    "url":"https://crs.in/abu-road-mount-abu"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Carry Rental Services — Gangapur City",
+    "image":"https://crs.in/images/og-image.jpg",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Gangapur City",
+      "addressLocality":"Sawai Madhopur",
+      "addressRegion":"Rajasthan",
+      "addressCountry":"IN"
+    },
+    "telephone":"+91-8003990475",
+    "areaServed":["Gangapur City","Sawai Madhopur","Rajasthan"],
+    "url":"https://crs.in/gangapur-city"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What are your prices?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Car-wise pricing — every model has a different rate (e.g., Thar, Fortuner, Swift). All plans show starting prices only. WhatsApp us for the exact model-wise quote."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you provide drivers?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We are a 100% self-drive service. You drive the car yourself. (For weddings, chauffeur is optional only with luxury cars.)"
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Which areas do you serve?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We serve Abu Road & Mount Abu, Gangapur City (Sawai Madhopur) and deliver across Rajasthan including Udaipur and Jaipur."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How to book?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Tap on WhatsApp Book button or call +91 80039 90475. Quick KYC and confirmation within minutes."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://crs.in"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://crs.in/services.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -760,592 +300,479 @@
 
 <!-- HEADER -->
 <header class="header-bar">
-  <nav class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="images/carryrentalservices-logo.png" alt="Carry Rental Services" class="logo-img">
+  <nav class="nav-container" aria-label="Primary">
+    <a href="index.html" class="nav-logo" aria-label="Carry Rental Services Home">
+      <img src="images/carryrentalservices-logo.png" alt="Carry Rental Services" class="logo-img" loading="eager" decoding="async">
       <span class="logo-text"></span>
     </a>
     <ul class="nav-menu">
       <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="agreement.html" class="nav-link">Agreement</a></li>
-      <li class="nav-item"><a href="services.html" class="nav-link">Service</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link" aria-current="page">Services</a></li>
       <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
-    <a href="https://wa.me/918003990475?text=I'm%20interested%20in%20Self%20Drive%20Car%20Rental" class="nav-cta">Book Now <span class="cta-icon">→</span></a>
-    <div class="nav-hamburger" id="hamburger-btn">
-      <span></span><span></span><span></span>
-    </div>
+    <a href="https://wa.me/918003990475?text=I'm%20interested%20in%20Self%20Drive%20Car%20Rental" class="nav-cta" rel="noopener">Book Now
+      <svg class="cta-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M14 3l1.41 1.41L9.83 10H21v2H9.83l5.58 5.59L14 19l-8-8 8-8z"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
-  <div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="agreement.html">Agreement</a></li>
-      <li><a href="services.html">Service</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </header>
 
-<style>
-.header-bar {
-  position: fixed;
-  top: 24px;
-  left: 0; right: 0;
-  z-index: 9999;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-}
-.nav-container {
-  width: 90vw;
-  max-width: 1300px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 48px;
-  box-shadow: 0 8px 40px 0 rgba(32, 50, 90, 0.12);
-  display: flex;
-  align-items: center;
-  padding: 0 32px 0 18px;
-  min-height: 74px;
-  pointer-events: auto;
-  gap: 20px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-  margin-right: 22px;
-}
-.logo-img {
-  max-height: 44px;
-  min-width: 44px;
-}
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
-  margin: 0 0 0 16px;
-  padding: 0;
-  flex: 1 1 auto;
-}
-.nav-link {
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-  color: #202834;
-  padding: 16px 18px 16px 12px;
-  border-radius: 32px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.nav-link:hover {
-  background: #ecf0fa;
-  color: #e31919;
-}
-.nav-cta {
-  background: #256eff;
-  color: #fff;
-  font-size: 18px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  margin-left: 24px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: all 0.3s;
-  gap: 8px;
-}
-.cta-icon {
-  font-size: 1.5em;
-}
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  height: 46px; width: 46px;
-  border-radius: 100%;
-  margin-left: 18px;
-}
-.nav-hamburger span {
-  background: #222;
-  height: 4px; width: 28px;
-  border-radius: 2px;
-  margin: 3px 0;
-}
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 100px; left: 0; right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  z-index: 9999;
-  border-radius: 0 0 32px 32px;
-  padding: 22px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  max-width: 360px;
-  margin: 0 auto;
-}
-.mobile-menu li a {
-  display: block;
-  padding: 14px 10px;
-  color: #2d3652;
-  font-size: 18px;
-  border-radius: 22px;
-  text-decoration: none;
-  font-weight: 600;
-}
-@media (max-width: 650px) {
-  .nav-menu, .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-  .header-bar {top:10px;}
-}
-</style>
-
 <!-- Hero Section -->
 <section class="hero-section">
-    <div class="hero-content">
-        <h1 class="hero-title floating">Self Drive Car Rental in Rajasthan</h1>
-        <p class="hero-subtitle">🚗 Drive Your Way — Hourly • Daily • Weekly • Monthly</p>
-        <p class="hero-description">
-            Premium self-drive cars without driver | Serving Abu Road, Mount Abu, Gangapur City & Across Rajasthan
-        </p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/918003990475?text=I%20want%20to%20rent%20a%20self%20drive%20car" class="btn-primary">
-                📱 Book on WhatsApp
-            </a>
-            <a href="#services" class="btn-secondary">Explore Rental Plans</a>
-        </div>
+  <div class="hero-content">
+    <h1 class="hero-title">Self Drive Car Rental in Rajasthan</h1>
+    <p class="hero-subtitle">Drive Your Way — Hourly • Daily • Weekly • Monthly</p>
+    <p class="hero-description">Premium self-drive cars without driver | Serving Abu Road, Mount Abu, Gangapur City & Across Rajasthan</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/918003990475?text=I%20want%20to%20rent%20a%20self%20drive%20car" class="btn-primary" rel="noopener" aria-label="Book on WhatsApp">📱 Book on WhatsApp</a>
+      <a href="#services" class="btn-secondary">Explore Rental Plans</a>
     </div>
+  </div>
 </section>
 
 <!-- Stats Section -->
-<section class="section" style="background: white; padding: 60px 20px;">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Happy Customers</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">25+</div>
-                <div class="stat-label">Premium Cars</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Support Available</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Self Drive Freedom</div>
-            </div>
-        </div>
+<section class="section" style="background:#fff;padding:60px 20px;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="stat-number">500+</div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat-card reveal"><div class="stat-number">25+</div><div class="stat-label">Premium Cars</div></div>
+      <div class="stat-card reveal"><div class="stat-number">24/7</div><div class="stat-label">Support Available</div></div>
+      <div class="stat-card reveal"><div class="stat-number">100%</div><div class="stat-label">Self Drive Freedom</div></div>
     </div>
+  </div>
 </section>
 
-<!-- Why Choose Us Section -->
-<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-    <div class="container">
-        <h2 class="section-title">Why Carry Rental Services?</h2>
-        <p class="section-subtitle">Experience the freedom of self-drive car rentals with flexible plans tailored to your needs</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚗</div>
-                <h3 class="feature-title">100% Self-Drive</h3>
-                <p class="feature-desc">No driver included. Complete privacy and freedom to drive anywhere, anytime at your own pace.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Instant Booking</h3>
-                <p class="feature-desc">Quick WhatsApp booking with instant confirmation. Get your car in under 2 hours.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <h3 class="feature-title">Premium Fleet</h3>
-                <p class="feature-desc">Well-maintained sedans, SUVs, and luxury cars. All sanitized and serviced before every rental.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🕐</div>
-                <h3 class="feature-title">Flexible Duration</h3>
-                <p class="feature-desc">Rent by the hour, day, week, or month. Choose what suits your schedule and budget.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3 class="feature-title">Transparent Pricing</h3>
-                <p class="feature-desc">No hidden charges. Clear pricing with all taxes included. Pay only for what you use.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📍</div>
-                <h3 class="feature-title">Multiple Locations</h3>
-                <p class="feature-desc">Convenient pickup from Abu Road, Gangapur City, and delivery across Rajasthan.</p>
-            </div>
+<!-- Why Choose Us -->
+<section class="section" style="background: linear-gradient(135deg,#f8f9fa 0%, #e9ecef 100%);">
+  <div class="container">
+    <h2 class="section-title">Why Carry Rental Services?</h2>
+    <p class="section-subtitle">Experience the freedom of self-drive car rentals with flexible plans tailored to your needs</p>
 
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3 class="feature-title">Fully Insured</h3>
-                <p class="feature-desc">All cars come with comprehensive insurance for your peace of mind.</p>
-            </div>
+    <div class="features-grid">
+      <!-- Proper SVG Icons -->
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Steering wheel -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 100 18 9 9 0 000-18Zm0 8a5 5 0 015 5h-2a3 3 0 00-6 0H7a5 5 0 015-5Zm0-2a1 1 0 110-2 1 1 0 010 2Z" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">100% Self-Drive</h3>
+        <p class="feature-desc">No driver included. Complete privacy and freedom to drive anywhere, anytime at your own pace.</p>
+      </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">🔧</div>
-                <h3 class="feature-title">24/7 Assistance</h3>
-                <p class="feature-desc">Round-the-clock roadside support and emergency helpline available.</p>
-            </div>
-        </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Lightning bolt -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8Z" stroke="#8B0000" stroke-width="1.5" fill="none"/></svg>
+        </span>
+        <h3 class="feature-title">Instant Booking</h3>
+        <p class="feature-desc">Quick WhatsApp booking with instant confirmation. Get your car in under 2 hours.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Diamond -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M3 9l4-5h10l4 5-9 12L3 9Z" stroke="#8B0000" stroke-width="1.5" fill="none"/></svg>
+        </span>
+        <h3 class="feature-title">Premium Fleet</h3>
+        <p class="feature-desc">Well-maintained sedans, SUVs, and luxury cars. All sanitized and serviced before every rental.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Clock -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8B0000" stroke-width="1.5"/><path d="M12 7v6l4 2" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">Flexible Duration</h3>
+        <p class="feature-desc">Rent by the hour, day, week, or month. Choose what suits your schedule and budget.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Receipt -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" stroke="#8B0000" stroke-width="1.5"/><path d="M8 7h8M8 11h8M8 15h6" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">Transparent Pricing</h3>
+        <p class="feature-desc">No hidden charges. Car-wise pricing — every model has a different rate. Pay only for what you use.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Pin -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11Z" stroke="#8B0000" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">Multiple Locations</h3>
+        <p class="feature-desc">Convenient pickup from Abu Road & Gangapur City; delivery across Rajasthan.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Shield -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">Fully Insured</h3>
+        <p class="feature-desc">All cars come with comprehensive insurance for your peace of mind.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <span class="feature-icon" aria-hidden="true">
+          <!-- Wrench -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M14 7a4 4 0 005.66-5.66L16 5l-2 2-9 9a3 3 0 104.24 4.24l9-9 2-2Z" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </span>
+        <h3 class="feature-title">24/7 Assistance</h3>
+        <p class="feature-desc">Round-the-clock roadside support and emergency helpline available.</p>
+      </div>
     </div>
+
+    <!-- Location-focused SEO blocks -->
+    <div class="reveal" style="margin-top:70px">
+      <h3 class="feature-title" style="text-align:center;font-size:26px">Self Drive Car Rental in <strong>Abu Road & Mount Abu</strong></h3>
+      <p class="section-subtitle" style="margin-top:8px">
+        Mount Abu sightseeing, outstation trips to Udaipur/Jaipur, weekend getaways — pickup at Abu Road station or doorstep delivery in Mount Abu. Car-wise pricing; starting fares shown only.
+      </p>
+    </div>
+    <div class="reveal" style="margin-top:24px">
+      <h3 class="feature-title" style="text-align:center;font-size:26px">Self Drive Car Rental in <strong>Gangapur City (Sawai Madhopur)</strong></h3>
+      <p class="section-subtitle" style="margin-top:8px">
+        Ideal for Ranthambore/nearby routes, city travel & functions. Flexible hourly/daily plans; model-wise rates vary (Thar, Fortuner, Swift, etc.).
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- Rental Plans Section -->
-<section class="section" id="plans" style="background: white;">
-    <div class="container">
-        <h2 class="section-title">Flexible Rental Plans</h2>
-        <p class="section-subtitle">Choose the perfect plan that fits your schedule and budget</p>
-        
-        <div class="rental-plans">
-            <div class="plan-card">
-                <div class="plan-icon">⏱️</div>
-                <h3 class="plan-title">Hourly Rental</h3>
-                <p class="plan-desc">Perfect for quick trips, meetings, or short errands within the city.</p>
-                <div class="plan-price">₹299+</div>
-                <div class="plan-period">per hour</div>
-                <ul class="plan-features">
-                    <li>Minimum 3 hours booking</li>
-                    <li>50 km included per hour</li>
-                    <li>Fuel extra</li>
-                    <li>Perfect for city use</li>
-                </ul>
-            </div>
+<!-- Rental Plans -->
+<section class="section" id="plans" style="background:#fff;">
+  <div class="container">
+    <h2 class="section-title">Flexible Rental Plans</h2>
+    <p class="section-subtitle">Choose the perfect plan that fits your schedule and budget</p>
 
-            <div class="plan-card">
-                <span class="plan-badge">Most Popular</span>
-                <div class="plan-icon">📅</div>
-                <h3 class="plan-title">Daily Rental</h3>
-                <p class="plan-desc">Best for day trips, sightseeing, or business travel across Rajasthan.</p>
-                <div class="plan-price">₹1,999+</div>
-                <div class="plan-period">per day</div>
-                <ul class="plan-features">
-                    <li>24-hour usage</li>
-                    <li>250 km included</li>
-                    <li>Extra km: ₹12-15</li>
-                    <li>Fuel extra</li>
-                </ul>
-            </div>
-
-            <div class="plan-card">
-                <div class="plan-icon">📆</div>
-                <h3 class="plan-title">Weekly Rental</h3>
-                <p class="plan-desc">Ideal for extended tours, family vacations, or business projects.</p>
-                <div class="plan-price">₹12,999+</div>
-                <div class="plan-period">per week</div>
-                <ul class="plan-features">
-                    <li>7 days unlimited usage</li>
-                    <li>1500 km included</li>
-                    <li>Save up to 15%</li>
-                    <li>Fuel extra</li>
-                </ul>
-            </div>
-
-            <div class="plan-card">
-                <span class="plan-badge">Best Value</span>
-                <div class="plan-icon">🗓️</div>
-                <h3 class="plan-title">Monthly Rental</h3>
-                <p class="plan-desc">Perfect for long-term needs, corporate use, or extended stays.</p>
-                <div class="plan-price">₹39,999+</div>
-                <div class="plan-period">per month</div>
-                <ul class="plan-features">
-                    <li>30 days full freedom</li>
-                    <li>5000 km included</li>
-                    <li>Save up to 30%</li>
-                    <li>Fuel extra</li>
-                </ul>
-            </div>
+    <div class="rental-plans">
+      <div class="plan-card reveal">
+        <div class="plan-icon" aria-hidden="true">
+          <!-- Stopwatch -->
+          <svg width="55" height="55" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="8" stroke="#8B0000" stroke-width="1.5"/><path d="M9 1h6M12 5v2M12 9v4l3 2" stroke="#8B0000" stroke-width="1.5"/></svg>
         </div>
+        <h3 class="plan-title">Hourly Rental</h3>
+        <p class="plan-desc">Perfect for quick trips, meetings, or short errands within the city.</p>
+        <div class="plan-price">₹299+</div>
+        <div class="plan-period">per hour</div>
+        <ul class="plan-features">
+          <li>Minimum 3 hours booking</li>
+          <li>Up to 50 km/hour included</li>
+          <li>Fuel extra</li>
+          <li><strong>Car-wise pricing — each model has a different rate. All prices are starting prices.</strong></li>
+        </ul>
+      </div>
+
+      <div class="plan-card reveal">
+        <span class="plan-badge">Most Popular</span>
+        <div class="plan-icon" aria-hidden="true">
+          <!-- Calendar -->
+          <svg width="55" height="55" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="#8B0000" stroke-width="1.5"/><path d="M8 2v4M16 2v4M3 9h18" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="plan-title">Daily Rental</h3>
+        <p class="plan-desc">Best for day trips, sightseeing, or business travel across Rajasthan.</p>
+        <div class="plan-price">₹1,999+</div>
+        <div class="plan-period">per day</div>
+        <ul class="plan-features">
+          <li>24-hour usage</li>
+          <li>250 km included</li>
+          <li>Extra km: ₹12–15</li>
+          <li><strong>Car-wise pricing — each model has a different rate (Thar/Fortuner/Swift etc.). All prices are starting prices.</strong></li>
+          <li>Fuel extra</li>
+        </ul>
+      </div>
+
+      <div class="plan-card reveal">
+        <div class="plan-icon" aria-hidden="true">
+          <!-- Week -->
+          <svg width="55" height="55" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#8B0000" stroke-width="1.5"/><path d="M7 9h10M7 13h6M7 17h8" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="plan-title">Weekly Rental</h3>
+        <p class="plan-desc">Ideal for extended tours, family vacations, or business projects.</p>
+        <div class="plan-price">₹12,999+</div>
+        <div class="plan-period">per week</div>
+        <ul class="plan-features">
+          <li>7 days usage</li>
+          <li>1500 km included</li>
+          <li>Save up to 15%</li>
+          <li>Fuel extra</li>
+          <li><strong>Car-wise pricing — model-wise rates vary. Starting prices shown.</strong></li>
+        </ul>
+      </div>
+
+      <div class="plan-card reveal">
+        <span class="plan-badge">Best Value</span>
+        <div class="plan-icon" aria-hidden="true">
+          <!-- Month -->
+          <svg width="55" height="55" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#8B0000" stroke-width="1.5"/><path d="M7 8h10M7 12h10M7 16h7" stroke="#8B0000" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="plan-title">Monthly Rental</h3>
+        <p class="plan-desc">Perfect for long-term needs, corporate use, or extended stays.</p>
+        <div class="plan-price">₹39,999+</div>
+        <div class="plan-period">per month</div>
+        <ul class="plan-features">
+          <li>30 days full freedom</li>
+          <li>5000 km included</li>
+          <li>Save up to 30%</li>
+          <li>Fuel extra</li>
+          <li><strong>Car-wise pricing — each model has a different rate. Prices are starting figures.</strong></li>
+        </ul>
+      </div>
     </div>
+
+    <p class="pricing-note"><em>Note:</em> Model-wise pricing depends on car type, availability, and dates. WhatsApp for an exact quote.</p>
+  </div>
 </section>
 
-<!-- Our Services Section -->
+<!-- Our Services -->
 <section class="section" id="services" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-    <div class="container">
-        <h2 class="section-title">Our Premium Services</h2>
-        <p class="section-subtitle">Comprehensive self-drive solutions for every occasion and requirement</p>
-        
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">🗺️ Outstation Tours</h3>
-                    <p class="service-desc">Explore Rajasthan's magnificent destinations at your own pace with unlimited freedom.</p>
-                    <ul class="service-features">
-                        <li>Mount Abu, Udaipur, Jaipur, Jaisalmer tours</li>
-                        <li>Flexible km packages available</li>
-                        <li>Highway-ready vehicles</li>
-                        <li>GPS navigation included</li>
-                        <li>24/7 roadside assistance</li>
-                    </ul>
-                </div>
-            </div>
+  <div class="container">
+    <h2 class="section-title">Our Premium Services</h2>
+    <p class="section-subtitle">Comprehensive self-drive solutions for every occasion and requirement</p>
 
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">🏢 Corporate Rentals</h3>
-                    <p class="service-desc">Long-term self-drive solutions designed for businesses and corporate professionals.</p>
-                    <ul class="service-features">
-                        <li>Monthly & yearly rental plans</li>
-                        <li>Multiple vehicle fleet options</li>
-                        <li>GST invoicing available</li>
-                        <li>Dedicated account manager</li>
-                        <li>Priority booking & support</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">💍 Wedding Car Rentals</h3>
-                    <p class="service-desc">Make your special day memorable with our premium wedding car services (optional).</p>
-                    <ul class="service-features">
-                        <li>Luxury cars for baraat & bride</li>
-                        <li>Decoration services available</li>
-                        <li>Hourly & full-day packages</li>
-                        <li>Experienced chauffeurs (optional)</li>
-                        <li>Special wedding discounts</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">🎉 Special Occasions</h3>
-                    <p class="service-desc">Perfect for family functions, parties, festivals, and personal celebrations.</p>
-                    <ul class="service-features">
-                        <li>Birthday & anniversary trips</li>
-                        <li>Family gatherings & events</li>
-                        <li>Festival travel packages</li>
-                        <li>Weekend getaway specials</li>
-                        <li>Customized duration options</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Service 5 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">🎓 Student Packages</h3>
-                    <p class="service-desc">Affordable self-drive options for students and young travelers.</p>
-                    <ul class="service-features">
-                        <li>Special student discounts</li>
-                        <li>Group tour packages</li>
-                        <li>Affordable daily rates</li>
-                        <li>Flexible pickup locations</li>
-                        <li>Easy booking process</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Service 6 -->
-            <div class="service-card">
-                <div class="service-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">🔒 Airport Transfers</h3>
-                    <p class="service-desc">Hassle-free self-drive or chauffeur-driven airport pickup and drop services.</p>
-                    <ul class="service-features">
-                        <li>Jaipur, Udaipur airport coverage</li>
-                        <li>On-time guaranteed service</li>
-                        <li>Flight tracking included</li>
-                        <li>24/7 availability</li>
-                        <li>Fixed transparent pricing</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="services-grid">
+      <!-- Outstation Tours -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Road icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M10 2l-3 20h2l1-6h4l1 6h2L14 2h-4Zm1.5 10l.5-3 .5 3h-1Z"/></svg>
         </div>
+        <div class="service-content">
+          <h3 class="service-title">Outstation Tours</h3>
+          <p class="service-desc">Explore Rajasthan's magnificent destinations at your own pace with unlimited freedom.</p>
+          <ul class="service-features">
+            <li>Mount Abu, Udaipur, Jaipur, Jaisalmer tours</li>
+            <li>Flexible km packages available</li>
+            <li>Highway-ready vehicles</li>
+            <li>GPS navigation included</li>
+            <li>24/7 roadside assistance</li>
+          </ul>
+          <p class="pricing-note"><strong>Car-wise pricing — each model has a different rate. Prices shown on this page are starting prices.</strong></p>
+        </div>
+      </div>
+
+      <!-- Corporate Rentals -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Briefcase -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M9 3h6a2 2 0 012 2v1h3a2 2 0 012 2v3H1V8a2 2 0 012-2h3V5a2 2 0 012-2Zm-8 9h22v5a2 2 0 01-2 2H3a2 2 0 01-2-2v-5Zm8-7v1h6V5H9Z"/></svg>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Corporate Rentals</h3>
+          <p class="service-desc">Long-term self-drive solutions designed for businesses and corporate professionals.</p>
+          <ul class="service-features">
+            <li>Monthly & yearly rental plans</li>
+            <li>Multiple vehicle fleet options</li>
+            <li>GST invoicing available</li>
+            <li>Dedicated account manager</li>
+            <li>Priority booking & support</li>
+          </ul>
+          <p class="pricing-note"><strong>Car-wise pricing — model-wise rates vary; figures are starting prices.</strong></p>
+        </div>
+      </div>
+
+      <!-- Wedding Car Rentals -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Rings -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 7l2-2-1-1h-2l-1 1 2 2Zm-6 4a5 5 0 109.58 1.88A6 6 0 1120 9a5 5 0 10-10 2Z"/></svg>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Wedding Car Rentals</h3>
+          <p class="service-desc">Make your special day memorable with our premium wedding car services (optional chauffeur).</p>
+          <ul class="service-features">
+            <li>Luxury cars for baraat & bride</li>
+            <li>Decoration services available</li>
+            <li>Hourly & full-day packages</li>
+            <li>Experienced chauffeurs (optional)</li>
+            <li>Special wedding discounts</li>
+          </ul>
+          <p class="pricing-note"><strong>Car-wise pricing — luxury models have different rates. Prices start from base shown.</strong></p>
+        </div>
+      </div>
+
+      <!-- Special Occasions -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Calendar star -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M7 2v3h10V2h2v3h2v17H3V5h2V2h2Zm5 7l1.176 2.382L16.8 12l-2.624.618L13 15l-1.176-2.382L9.2 12l2.624-.618L12 9Z"/></svg>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Special Occasions</h3>
+          <p class="service-desc">Perfect for family functions, parties, festivals, and personal celebrations.</p>
+          <ul class="service-features">
+            <li>Birthday & anniversary trips</li>
+            <li>Family gatherings & events</li>
+            <li>Festival travel packages</li>
+            <li>Weekend getaway specials</li>
+            <li>Customized duration options</li>
+          </ul>
+          <p class="pricing-note"><strong>Car-wise pricing — rates differ by model; all prices are starting prices.</strong></p>
+        </div>
+      </div>
+
+      <!-- Student Packages -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Graduation cap -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3 1 8l11 5 9-4.09V17h2V8L12 3Zm-7 9v4l7 3 7-3v-4l-7 3-7-3Z"/></svg>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Student Packages</h3>
+          <p class="service-desc">Affordable self-drive options for students and young travelers.</p>
+          <ul class="service-features">
+            <li>Special student discounts</li>
+            <li>Group tour packages</li>
+            <li>Affordable daily rates</li>
+            <li>Flexible pickup locations</li>
+            <li>Easy booking process</li>
+          </ul>
+          <p class="pricing-note"><strong>Car-wise pricing — model-wise rates vary; listed prices are starting points.</strong></p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- CTA Section -->
+<!-- CTA -->
 <section class="cta-section">
-    <div class="cta-content">
-        <h2 class="cta-title">Ready to Hit the Road?</h2>
-        <p class="cta-desc">Book your perfect self-drive car today and experience the freedom of driving</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/918003990475?text=I%20want%20to%20book%20a%20self%20drive%20car" class="btn-primary" style="background: white; color: #8B0000;">
-                📱 Book on WhatsApp Now
-            </a>
-            <a href="tel:+918003990475" class="btn-secondary">
-                📞 Call: +91 80039 90475
-            </a>
-        </div>
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Hit the Road?</h2>
+    <p class="cta-desc">Book your perfect self-drive car today and experience the freedom of driving</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/918003990475?text=I%20want%20to%20book%20a%20self%20drive%20car" class="btn-primary" style="background:#fff;color:var(--maroon-600);" rel="noopener">📱 Book on WhatsApp Now</a>
+      <a href="tel:+918003990475" class="btn-secondary">📞 Call: +91 80039 90475</a>
     </div>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-    <div class="footer-content container">
-        <div class="footer-section">
-            <h3>About Carry Rental</h3>
-            <p>Leading self-drive car rental service in Rajasthan since 2018. We provide premium cars for hourly, daily, weekly, and monthly rentals with complete freedom and flexibility.</p>
-            <div class="social-links">
-                <a href="https://wa.me/918003990475" title="WhatsApp">💬</a>
-                <a href="https://facebook.com/carryrentalservices" title="Facebook">📘</a>
-                <a href="https://instagram.com/carryrentalservices" title="Instagram">📷</a>
-                <a href="mailto:carryrentalservices@gmail.com" title="Email">✉️</a>
-            </div>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="services.html">Our Services</a>
-            <a href="agreement.html">Rental Agreement</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="#plans">Rental Plans</a>
-        </div>
-
-        <div class="footer-section">
-            <h3>Our Services</h3>
-            <a href="#services">Hourly Car Rental</a>
-            <a href="#services">Daily Car Rental</a>
-            <a href="#services">Weekly Car Rental</a>
-            <a href="#services">Monthly Car Rental</a>
-            <a href="#services">Outstation Tours</a>
-            <a href="#services">Corporate Rentals</a>
-        </div>
-
-        <div class="footer-section">
-            <h3>Service Areas</h3>
-            <p>📍 Abu Road, Rajasthan</p>
-            <p>📍 Mount Abu, Rajasthan</p>
-            <p>📍 Gangapur City, Rajasthan</p>
-            <p>📍 Sawai Madhopur, Rajasthan</p>
-            <p>📍 Udaipur, Jaipur & Across Rajasthan</p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Contact Info</h3>
-            <p>📞 +91 80039 90475</p>
-            <p>✉️ carryrentalservices@gmail.com</p>
-            <p>🕐 24/7 Support Available</p>
-            <p>💬 WhatsApp Booking Available</p>
-        </div>
+  <div class="footer-content container">
+    <div class="footer-section">
+      <h3>About Carry Rental</h3>
+      <p>Trusted self-drive car rental in Rajasthan. Opened in <strong>2025</strong> — growing fleet, transparent pricing, and 24×7 assistance for Abu Road, Mount Abu & Gangapur City.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://wa.me/918003990475" aria-label="WhatsApp">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19.11 17.34c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.7.15-.21.29-.8.98-.98 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.76-1.66-2.06-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.09-.2.05-.37-.03-.52-.08-.15-.7-1.69-.96-2.32-.25-.6-.5-.52-.7-.53l-.6-.01c-.2 0-.52.07-.79.37-.27.29-1.04 1-1.04 2.44 0 1.44 1.07 2.83 1.22 3.03.15.2 2.1 3.21 5.1 4.5.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.44.25-.71.25-1.31.17-1.44-.08-.13-.27-.2-.57-.35zM16.06 3.2C9.3 3.2 3.8 8.7 3.8 15.46c0 2.67.88 5.15 2.36 7.15L4 29.07l6.65-2.09a12.2 12.2 0 005.41 1.27c6.76 0 12.26-5.5 12.26-12.26S22.82 3.2 16.06 3.2zm0 22.08a9.79 9.79 0 01-4.99-1.37l-.36-.21-3.94 1.24 1.3-3.83-.23-.4a9.8 9.8 0 1118.22-5.44 9.8 9.8 0 01-9.99 10.01z" fill="#fff"/></svg>
+        </a>
+        <a class="social-link" href="https://facebook.com/carryrentalservices" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.49 17.52 2 11.93 2S2 6.49 2 12.07c0 5 3.66 9.14 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.93 8.44-9.93z" fill="#fff"/></svg>
+        </a>
+        <a class="social-link" href="https://instagram.com/carryrentalservices" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.41.4.6.23 1.03.5 1.49.96.46.46.73.9.96 1.49.16.46.35 1.24.4 2.41.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.41a3.9 3.9 0 01-.96 1.49 3.9 3.9 0 01-1.49.96c-.46.16-1.24.35-2.41.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.41-.4a3.9 3.9 0 01-1.49-.96 3.9 3.9 0 01-.96-1.49c-.16-.46-.35-1.24-.4-2.41C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.41.23-.6.5-1.03.96-1.49.46-.46.9-.73 1.49-.96.46-.16 1.24-.35 2.41-.4C8.42 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.61a6.1 6.1 0 00-2.2 1.43A6.1 6.1 0 00.5 4.23c-.28.76-.48 1.64-.54 2.91C-.1 8.41-.1 8.82-.1 12.08c0 3.26.01 3.67.07 4.95.06 1.27.26 2.15.54 2.91.3.8.73 1.4 1.43 2.1.7.7 1.3 1.13 2.1 1.43.76.28 1.64.48 2.91.54 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.54a6.1 6.1 0 002.1-1.43 6.1 6.1 0 001.43-2.1c.28-.76.48-1.64.54-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.54-2.91a6.1 6.1 0 00-1.43-2.1A6.1 6.1 0 0019.86.61c-.76-.28-1.64-.48-2.91-.54C15.67.01 15.26 0 12 0z" fill="#fff"/><path d="M12 5.84A6.16 6.16 0 105 12a6.16 6.16 0 007-6.16m0 10.16A4 4 0 118 12a4 4 0 014 4z" fill="#fff"/><circle cx="18.4" cy="5.6" r="1.4" fill="#fff"/></svg>
+        </a>
+        <a class="social-link" href="mailto:carryrentalservices@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#fff"/></svg>
+        </a>
+      </div>
     </div>
 
-    <div class="footer-bottom container">
-        <p>&copy; 2025 Carry Rental Services. All Rights Reserved. | Self Drive Car Rental Rajasthan</p>
-        <p style="margin-top: 10px;">Abu Road | Mount Abu | Gangapur City | Sawai Madhopur | Rajasthan</p>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="agreement.html">Rental Agreement</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#plans">Rental Plans</a>
     </div>
+
+    <div class="footer-section">
+      <h3>Our Services</h3>
+      <a href="#services">Hourly Car Rental</a>
+      <a href="#services">Daily Car Rental</a>
+      <a href="#services">Weekly Car Rental</a>
+      <a href="#services">Monthly Car Rental</a>
+      <a href="#services">Outstation Tours</a>
+      <a href="#services">Corporate Rentals</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Service Areas</h3>
+      <p>📍 Abu Road, Rajasthan</p>
+      <p>📍 Mount Abu, Rajasthan</p>
+      <p>📍 Gangapur City, Rajasthan</p>
+      <p>📍 Sawai Madhopur, Rajasthan</p>
+      <p>📍 Udaipur, Jaipur & Across Rajasthan</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact Info</h3>
+      <p>📞 +91 80039 90475</p>
+      <p>✉️ carryrentalservices@gmail.com</p>
+      <p>🕐 24/7 Support Available</p>
+      <p>💬 WhatsApp Booking Available</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>&copy; 2025 Carry Rental Services. All Rights Reserved. | Self Drive Car Rental Rajasthan</p>
+    <p style="margin-top:10px;">Abu Road | Mount Abu | Gangapur City | Sawai Madhopur | Rajasthan</p>
+  </div>
 </footer>
 
 <script>
-// Scroll Progress Bar
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scrollProgress');
+  // Scroll Progress Bar
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('scrollProgress');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollPercent = (scrollTop / scrollHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
+    el.style.width = scrollPercent + '%';
+  });
 
-// Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (hamburger) {
+  // Mobile Menu Toggle
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger) {
     hamburger.addEventListener('click', () => {
-        if (mobileMenu.style.display === 'block') {
-            mobileMenu.style.display = 'none';
-        } else {
-            mobileMenu.style.display = 'block';
-        }
+      const isOpen = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = isOpen ? 'none' : 'block';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
     });
-}
+  }
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(href && href.length > 1){
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            if (mobileMenu) {
-                mobileMenu.style.display = 'none';
-            }
+        const target = document.querySelector(href);
+        if(target){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          if(mobileMenu) mobileMenu.style.display='none';
         }
+      }
     });
-});
+  });
 
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.opacity='1';
+        entry.target.style.transform='translateY(0)';
+        observer.unobserve(entry.target);
+      }
     });
-}, observerOptions);
+  },{threshold:0.1, rootMargin:'0px 0px -50px 0px'});
 
-document.querySelectorAll('.feature-card, .service-card, .plan-card, .stat-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
+  document.querySelectorAll('.reveal, .service-card, .plan-card, .stat-card').forEach(el=>{
+    if(!el.classList.contains('reveal')){
+      el.classList.add('reveal');
+    }
     observer.observe(el);
-});
+  });
 </script>
 
 </body>

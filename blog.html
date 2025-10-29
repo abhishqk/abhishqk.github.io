@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rent self-drive cars in Gangapur City & Mount Abu. Travel tips, routes, and best deals from Carry Rental Services.">
+    <meta name="keywords" content="self drive car blog, rajasthan travel tips, mount abu trips, gangapur city car rental, travel guides rajasthan">
+    <title>Blog | Carry Rental Services – Travel Guides & Tips</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <link rel="icon" type="image/png" href="assets/favicon-rc-new.png" sizes="192x192">
+    <link rel="shortcut icon" href="assets/favicon-rc-new.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .header-bar {
+            position: fixed;
+            top: 24px;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .nav-container {
+            width: 90vw;
+            max-width: 1300px;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 48px;
+            box-shadow: 0 6px 32px 0 rgba(32, 50, 90, 0.10);
+            display: flex;
+            align-items: center;
+            padding: 0 32px 0 18px;
+            min-height: 74px;
+            pointer-events: auto;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            margin-right: 22px;
+        }
+
+        .logo-img {
+            max-height: 44px;
+            min-width: 44px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+            margin: 0 0 0 16px;
+            padding: 0;
+            flex: 1 1 auto;
+        }
+
+        .nav-link {
+            font-size: 17px;
+            font-weight: 500;
+            color: #202834;
+            padding: 16px 18px 16px 12px;
+            border-radius: 32px;
+            text-decoration: none;
+            transition: all 0.18s;
+        }
+
+        .nav-link:hover {
+            background: #ecf0fa;
+            color: #e31919;
+        }
+
+        .nav-cta {
+            background: #e31919;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            margin-left: 24px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.18s;
+        }
+
+        .nav-cta:hover {
+            background: #950f0f;
+        }
+
+        .cta-icon {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            height: 46px;
+            width: 46px;
+            border-radius: 100%;
+            margin-left: 18px;
+        }
+
+        .nav-hamburger span {
+            background: #222;
+            height: 4px;
+            width: 28px;
+            border-radius: 2px;
+            margin: 3px 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 9999;
+            border-radius: 0 0 32px 32px;
+            padding: 22px 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .mobile-menu li a {
+            display: block;
+            padding: 14px 10px;
+            color: #2d3652;
+            font-size: 18px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(220, 20, 60, 0.8)),
+                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 160px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.4);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #8B0000;
+            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,255,255,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #8B0000;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Categories Filter */
+        .categories-filter {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .categories-filter h3 {
+            color: #8B0000;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .category-tab {
+            padding: 12px 24px;
+            background: #f8f8f8;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Blog Cards */
+        .blog-grid {
+            display: grid;
+            gap: 35px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(139, 0, 0, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #ddd, #f0f0f0);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .blog-card h3 {
+            color: #222;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+
+        .blog-card h3:hover {
+            color: #8B0000;
+            cursor: pointer;
+        }
+
+        .blog-excerpt {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .read-more {
+            color: #DC143C;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .sidebar-widget h3 {
+            color: #8B0000;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 800;
+            border-bottom: 3px solid #DC143C;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px 0 0 50px;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #DC143C;
+        }
+
+        .search-box button {
+            padding: 14px 25px;
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .search-box button:hover {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .popular-post:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .popular-post-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            flex-shrink: 0;
+        }
+
+        .popular-post-content h4 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .popular-post-content h4:hover {
+            color: #DC143C;
+            cursor: pointer;
+        }
+
+        .popular-post-date {
+            font-size: 13px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .location-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .location-tag {
+            padding: 10px 18px;
+            background: #f8f8f8;
+            border: 2px solid #DC143C;
+            color: #DC143C;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .location-tag:hover {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Special Offer Widget */
+        .offer-widget {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            border: none;
+        }
+
+        .offer-widget h3 {
+            color: white;
+            border-color: white;
+        }
+
+        .offer-widget p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            padding: 70px 20px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .newsletter h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 35px;
+            font-size: 18px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            max-width: 550px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .newsletter-form button {
+            padding: 18px 40px;
+            background: white;
+            color: #8B0000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 60px;
+        }
+
+        .pagination button {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #DC143C;
+            color: #DC143C;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .pagination button:hover,
+        .pagination button.active {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: #DC143C;
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: #DC143C;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-menu, .nav-cta {
+                display: none;
+            }
+            
+            .nav-hamburger {
+                display: flex;
+            }
+            
+            .header-bar {
+                top: 10px;
+            }
+
+            .hero {
+                padding: 140px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .blog-image {
+                height: 200px;
+            }
+
+            .blog-card h3 {
+                font-size: 22px;
+            }
+
+            .category-tabs {
+                font-size: 14px;
+            }
+
+            .newsletter h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header-bar">
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <img src="images/carryrentalservices-logo.png" alt="Carry Rental Services" class="logo-img">
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="agreement.html" class="nav-link">Agreement</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Service</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="https://wa.me/918003990475?text=I'm%20interested%20in%20Car%20Rental%20Services" class="nav-cta">Book Now <span class="cta-icon">&#8594;</span></a>
+        <div class="nav-hamburger" id="hamburger-btn">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agreement.html">Agreement</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>🚗 Explore Rajasthan with Self-Drive Cars</h1>
+    <p>Travel guides, tips & routes for your perfect road trip. Rent Thar, Fortuner, Scorpio for weekend adventures with zero hassle and 24×7 support.</p>
+    <div class="hero-buttons">
+        <a href="https://wa.me/918003990475?text=I%20want%20to%20book%20a%20car" class="btn btn-primary">
+            📱 Book Now
+        </a>
+        <a href="services.html" class="btn btn-secondary">View Our Fleet</a>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Categories Filter -->
+    <div class="categories-filter">
+        <h3>📂 Browse by Category</h3>
+        <div class="category-tabs">
+            <span class="category-tab active">All Posts</span>
+            <span class="category-tab">🗺️ Travel Guides</span>
+            <span class="category-tab">💡 Rental Tips</span>
+            <span class="category-tab">🎉 Offers & News</span>
+            <span class="category-tab">🛣️ Local Routes</span>
+            <span class="category-tab">⭐ Customer Stories</span>
+            <span class="category-tab">🚘 Fleet Highlights</span>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23800000'/%3E%3Cstop offset='100%25' style='stop-color:%23DC143C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g1)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E🏔️ Mount Abu Weekend%3C/text%3E%3C/svg%3E" alt="Mount Abu weekend trip" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Travel Guides</span>
+                        <span>📅 Nov 3, 2025</span>
+                        <span>⏱️ 6 min read</span>
+                    </div>
+                    <h3>Top 6 Weekend Trips from Mount Abu by Self-Drive Car</h3>
+                    <p class="blog-excerpt">Discover the most scenic weekend getaways from Mount Abu. From Guru Shikhar to Nakki Lake, explore Rajasthan's beauty with our self-drive Thar and Fortuner rentals. Perfect routes for first-time visitors.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238b0000'/%3E%3Cstop offset='100%25' style='stop-color:%23b71414'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g2)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E🚗 Gangapur Guide%3C/text%3E%3C/svg%3E" alt="Gangapur City travel guide" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Local Routes</span>
+                        <span>📅 Oct 28, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <h3>Complete Guide to Self Drive Car Rental in Gangapur City</h3>
+                    <p class="blog-excerpt">Everything you need to know about renting self-drive cars in Gangapur City. Best routes, parking tips, fuel stations, and local attractions to explore with your rental car.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a52a2a'/%3E%3Cstop offset='100%25' style='stop-color:%23DC143C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g3)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E🏜️ Thar Adventure%3C/text%3E%3C/svg%3E" alt="Thar off-road adventure" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Fleet Highlights</span>
+                        <span>📅 Oct 25, 2025</span>
+                        <span>⏱️ 4 min read</span>
+                    </div>
+                    <h3>Why Thar is Perfect for Rajasthan Desert Adventures</h3>
+                    <p class="blog-excerpt">Experience the thrill of desert driving with our Mahindra Thar. Perfect for off-road adventures in Rajasthan's rugged terrain. Learn why Thar is the ultimate choice for adventure seekers.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 4 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23800020'/%3E%3Cstop offset='100%25' style='stop-color:%23DC143C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g4)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E💡 Rental Tips%3C/text%3E%3C/svg%3E" alt="Car rental tips" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Rental Tips</span>
+                        <span>📅 Oct 20, 2025</span>
+                        <span>⏱️ 7 min read</span>
+                    </div>
+                    <h3>10 Essential Tips for First-Time Self Drive Renters</h3>
+                    <p class="blog-excerpt">New to self-drive rentals? Here's everything you need to know to make your first experience smooth and hassle-free. From documentation to driving tips.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 5 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23DC143C'/%3E%3Cstop offset='100%25' style='stop-color:%238B0000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g5)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E🎉 Special Offers%3C/text%3E%3C/svg%3E" alt="Special offers" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Offers & News</span>
+                        <span>📅 Oct 15, 2025</span>
+                        <span>⏱️ 3 min read</span>
+                    </div>
+                    <h3>Diwali Special: Get 15% OFF on All Car Bookings</h3>
+                    <p class="blog-excerpt">Celebrate this festive season with amazing discounts on self-drive car rentals. Book Thar, Fortuner, or Scorpio and save big on your next adventure trip.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+
+            <!-- Blog Card 6 -->
+            <article class="blog-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Cdefs%3E%3ClinearGradient id='g6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23b22222'/%3E%3Cstop offset='100%25' style='stop-color:%23DC143C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g6)' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='Arial'%3E⭐ Customer Story%3C/text%3E%3C/svg%3E" alt="Customer story" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="category-tag">Customer Stories</span>
+                        <span>📅 Oct 10, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <h3>How We Made Our Rajasthan Road Trip Unforgettable</h3>
+                    <p class="blog-excerpt">Read about the Sharma family's incredible 5-day road trip across Rajasthan with our Fortuner rental. Real experiences, photos, and honest feedback.</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Search Widget -->
+            <div class="sidebar-widget">
+                <h3>🔍 Search</h3>
+                <div class="search-box">
+                    <input type="text" placeholder="Search blog posts...">
+                    <button>Go</button>
+                </div>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="sidebar-widget">
+                <h3>🔥 Popular Posts</h3>
+                <div class="popular-post">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23800000' width='90' height='90'/%3E%3C/svg%3E" alt="Popular post" class="popular-post-img">
+                    <div class="popular-post-content">
+                        <h4>Best Time to Visit Mount Abu</h4>
+                        <span class="popular-post-date">Oct 15, 2025</span>
+                    </div>
+                </div>
+                <div class="popular-post">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%238b0000' width='90' height='90'/%3E%3C/svg%3E" alt="Popular post" class="popular-post-img">
+                    <div class="popular-post-content">
+                        <h4>Fortuner vs Scorpio: Which to Choose?</h4>
+                        <span class="popular-post-date">Oct 10, 2025</span>
+                    </div>
+                </div>
+                <div class="popular-post">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23a52a2a' width='90' height='90'/%3E%3C/svg%3E" alt="Popular post" class="popular-post-img">
+                    <div class="popular-post-content">
+                        <h4>Safety Tips for Long Road Trips</h4>
+                        <span class="popular-post-date">Oct 5, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Tags -->
+            <div class="sidebar-widget">
+                <h3>📍 Locations</h3>
+                <div class="location-tags">
+                    <span class="location-tag">Mount Abu</span>
+                    <span class="location-tag">Gangapur City</span>
+                    <span class="location-tag">Aburoad</span>
+                    <span class="location-tag">Udaipur</span>
+                    <span class="location-tag">Jaipur</span>
+                    <span class="location-tag">Jodhpur</span>
+                </div>
+            </div>
+
+            <!-- Special Offer Widget -->
+            <div class="sidebar-widget offer-widget">
+                <h3>🎉 Special Offer</h3>
+                <p>Get 10% OFF on your first booking! Use code: FIRST10</p>
+                <a href="https://wa.me/918003990475?text=I%20want%20to%20claim%20FIRST10%20offer" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Claim Offer</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button>← Previous</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>Next →</button>
+    </div>
+</div>
+
+<!-- Newsletter Section -->
+<section class="newsletter">
+    <h2>📧 Stay Updated with Our Latest Offers</h2>
+    <p>Subscribe to get 10% off on your first booking and travel tips straight to your inbox!</p>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Carry Rental Services</h4>
+            <p>Your trusted partner for self-drive car rentals in Gangapur City and Mount Abu. Experience the freedom of the road with our premium fleet.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Our Fleet</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="agreement.html">Terms & Agreement</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul>
+                <li><a href="#">Self-Drive Rentals</a></li>
+                <li><a href="#">Weekend Packages</a></li>
+                <li><a href="#">Long Distance Trips</a></li>
+                <li><a href="#">Corporate Bookings</a></li>
+                <li><a href="#">Airport Transfers</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <ul>
+                <li>📞 +91 8003990475</li>
+                <li>📧 info@carryrentalservices.in</li>
+                <li>📍 Gangapur City, Rajasthan</li>
+                <li>🕒 24/7 Support Available</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Carry Rental Services. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Category filter functionality
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // You can add filtering logic here
+            console.log('Selected category:', this.textContent);
+        });
+    });
+
+    // Newsletter form submission
+    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input').value;
+        alert('Thank you for subscribing! Check your email at ' + email + ' for the discount code.');
+        this.reset();
+    });
+
+    // Search functionality
+    document.querySelector('.search-box button').addEventListener('click', function() {
+        const searchInput = document.querySelector('.search-box input');
+        if(searchInput.value.trim()) {
+            alert('Searching for: ' + searchInput.value);
+            // You can add actual search logic here
+        }
+    });
+
+    // Pagination functionality
+    const paginationButtons = document.querySelectorAll('.pagination button');
+    paginationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if(this.textContent.includes('←') || this.textContent.includes('→')) {
+                console.log('Navigate:', this.textContent);
+            } else {
+                paginationButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                console.log('Go to page:', this.textContent);
+            }
+        });
+    });
+
+    // Popular post click tracking
+    document.querySelectorAll('.popular-post-content h4').forEach(title => {
+        title.addEventListener('click', function() {
+            console.log('Popular post clicked:', this.textContent);
+        });
+    });
+
+    // Location tag click
+    document.querySelectorAll('.location-tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+            console.log('Location selected:', this.textContent);
+        });
+    });
+
+    // Read more button tracking
+    document.querySelectorAll('.read-more').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Read more clicked for article');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
