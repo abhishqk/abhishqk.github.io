@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhav University - Student Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Left Panel - Login Form */
+        .left-panel {
+            flex: 0 0 45%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(128, 0, 32, 0.1) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 450px;
+            z-index: 2;
+        }
+
+        .university-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .university-logo h2 {
+            color: #800020;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #a0244d 0%, #800020 50%, #600018 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .university-logo p {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .login-box h1 {
+            color: #ffffff;
+            font-size: 42px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .login-box > p {
+            color: #888;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #800020;
+            box-shadow: 0 0 20px rgba(128, 0, 32, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 50px 16px 18px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: #555;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 18px;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .eye-icon:hover {
+            color: #800020;
+        }
+
+        .forgot-password {
+            color: #888;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            color: #800020;
+            transform: translateX(5px);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #a0244d 0%, #800020 50%, #600018 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(128, 0, 32, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(128, 0, 32, 0.6);
+        }
+
+        .login-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .signup-section {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .signup-section span {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .signup-btn {
+            padding: 10px 28px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(128, 0, 32, 0.5);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .signup-btn:hover {
+            background: rgba(128, 0, 32, 0.2);
+            border-color: #800020;
+            transform: translateY(-2px);
+        }
+
+        /* Right Panel - Welcome Section */
+        .right-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #c0305a 0%, #a0244d 25%, #800020 50%, #600018 75%, #4a0012 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .shape1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            top: -150px;
+            right: -150px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            top: 40%;
+            right: 15%;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        .welcome-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-content h2 {
+            color: #fff;
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .welcome-content h3 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 58px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-content .subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Illustration */
+        .illustration {
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            position: relative;
+            animation: floatIllustration 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIllustration {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .illustration svg {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Message display */
+        .message {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+            font-weight: 500;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.success {
+            background: rgba(0, 200, 100, 0.15);
+            color: #00ff88;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .message.error {
+            background: rgba(255, 50, 50, 0.15);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                flex: 0 0 100%;
+            }
+
+            .right-panel {
+                display: none;
+            }
+
+            .login-box {
+                max-width: 100%;
+            }
+
+            .welcome-content h2 {
+                font-size: 48px;
+            }
+
+            .welcome-content h3 {
+                font-size: 42px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel - Login Form -->
+        <div class="left-panel">
+            <div class="login-box">
+                <div class="university-logo">
+                    <h2>🎓 MADHAV UNIVERSITY</h2>
+                    <p>Excellence in Education</p>
+                </div>
+                
+                <h1>Student Login</h1>
+                <p>Enter your credentials to access portal</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username / Email</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <span class="eye-icon" onclick="togglePassword()">👁️</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="forgot-password">Forgot Password? →</a>
+                    
+                    <button type="submit" class="login-btn" id="loginBtn">Login</button>
+                    
+                    <div class="message" id="message"></div>
+                </form>
+                
+                <div class="signup-section">
+                    <span>New Student?</span>
+                    <button class="signup-btn" onclick="handleSignup()">Register Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Welcome Section -->
+        <div class="right-panel">
+            <div class="bg-shape shape1"></div>
+            <div class="bg-shape shape2"></div>
+            <div class="bg-shape shape3"></div>
+            
+            <div class="welcome-content">
+                <h2>Welcome to</h2>
+                <h3>Madhav University</h3>
+                <p class="subtitle">STUDENT PORTAL</p>
+                
+                <div class="illustration">
+                    <svg viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main Document Card with Shadow -->
+                        <g filter="url(#shadow)">
+                            <rect x="210" y="160" width="200" height="240" rx="15" fill="white" opacity="0.98"/>
+                        </g>
+                        
+                        <!-- Document Content -->
+                        <circle cx="310" cy="205" r="25" fill="#f5f5f5"/>
+                        <circle cx="310" cy="205" r="15" fill="#e0e0e0"/>
+                        <rect x="235" y="250" width="150" height="8" rx="4" fill="#f0f0f0"/>
+                        <rect x="235" y="270" width="150" height="8" rx="4" fill="#f0f0f0"/>
+                        <rect x="235" y="290" width="100" height="8" rx="4" fill="#f0f0f0"/>
+                        <rect x="235" y="310" width="150" height="8" rx="4" fill="#f0f0f0"/>
+                        <rect x="235" y="330" width="120" height="8" rx="4" fill="#f0f0f0"/>
+                        <rect x="235" y="360" width="150" height="25" rx="8" fill="#800020" opacity="0.8"/>
+                        
+                        <!-- Person 1 - Walking with Phone -->
+                        <g transform="translate(130, 240)">
+                            <circle cx="0" cy="0" r="22" fill="white"/>
+                            <ellipse cx="0" cy="2" rx="18" ry="20" fill="#2a2a2a"/>
+                            <path d="M 0 22 L 0 70" stroke="white" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M 0 40 L 18 65" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                            <path d="M 0 40 L -15 72" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                            <path d="M 0 30 L -12 48" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 0 35 L 20 42" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                            <!-- Phone -->
+                            <rect x="15" y="38" width="18" height="28" rx="3" fill="white"/>
+                            <rect x="17" y="40" width="14" height="24" rx="2" fill="#800020" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Person 2 - Sitting with Laptop -->
+                        <g transform="translate(450, 120)">
+                            <circle cx="0" cy="0" r="24" fill="white"/>
+                            <ellipse cx="0" cy="2" rx="20" ry="22" fill="#2a2a2a"/>
+                            <path d="M 0 24 L 0 55" stroke="white" stroke-width="11" stroke-linecap="round"/>
+                            <path d="M 0 40 L -20 55" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                            <path d="M 0 40 L 25 60" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                            <path d="M 0 30 L 22 28" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                            <!-- Laptop -->
+                            <rect x="17" y="23" width="45" height="32" rx="3" fill="white"/>
+                            <rect x="19" y="25" width="41" height="28" rx="2" fill="#800020" opacity="0.9"/>
+                            <line x1="20" y1="28" x2="58" y2="28" stroke="white" stroke-width="1" opacity="0.3"/>
+                            <line x1="20" y1="32" x2="58" y2="32" stroke="white" stroke-width="1" opacity="0.3"/>
+                        </g>
+                        
+                        <!-- Floating Elements -->
+                        <circle cx="150" cy="160" r="8" fill="white" opacity="0.6">
+                            <animate attributeName="cy" values="160;150;160" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="480" cy="280" r="10" fill="white" opacity="0.5">
+                            <animate attributeName="cy" values="280;270;280" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="190" cy="340" r="6" fill="white" opacity="0.7">
+                            <animate attributeName="cy" values="340;330;340" dur="3.5s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Shadow Filter -->
+                        <defs>
+                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const rightPanel = document.querySelector('.right-panel');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                rightPanel.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.querySelector('.eye-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.textContent = '🔓';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.textContent = '👁️';
+            }
+        }
+
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Add loading state
+            loginBtn.classList.add('loading');
+            loginBtn.textContent = 'Logging in...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                if (username && password) {
+                    messageDiv.className = 'message success';
+                    messageDiv.textContent = '✓ Login successful! Redirecting to dashboard...';
+                    messageDiv.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        console.log('Redirecting to dashboard...');
+                        // window.location.href = '/dashboard';
+                    }, 1500);
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.textContent = '✗ Please enter valid credentials';
+                    messageDiv.style.display = 'block';
+                    loginBtn.classList.remove('loading');
+                    loginBtn.textContent = 'Login';
+                }
+                
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 4000);
+            }, 1500);
+        });
+
+        // Handle signup button
+        function handleSignup() {
+            console.log('Redirecting to registration...');
+            // window.location.href = '/register';
+        }
+
+        // Add smooth input animations
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Add entrance animation to form elements
+        const formElements = document.querySelectorAll('.form-group, .login-btn, .signup-section');
+        formElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                element.style.transition = 'all 0.5s ease';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    </script>
+</body>
+</html>

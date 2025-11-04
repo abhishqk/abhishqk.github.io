@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhav University - Student Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5e6e8 0%, #e8d4d8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #8B0000 0%, #660000 100%);
+            padding: 30px 0;
+            color: white;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #A52A2A 0%, #8B0000 100%);
+            border-radius: 25px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .menu-item {
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .menu-item:hover, .menu-item.active {
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+
+        .menu-item.active {
+            border-left: 4px solid #FFD700;
+        }
+
+        .menu-icon {
+            font-size: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            background: #fafafa;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            width: 300px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B0000, #A52A2A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(139,0,0,0.3);
+        }
+
+        .user-info h3 {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .user-info p {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .notification-bell {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            background: #ff4444;
+            border-radius: 50%;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139,0,0,0.3);
+        }
+
+        .welcome-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .banner-date {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .banner-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .banner-subtitle {
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .banner-illustration {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 100px;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .see-all {
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .finance-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .finance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .finance-card.highlighted {
+            border: 3px solid #8B0000;
+            background: linear-gradient(135deg, #fff 0%, #ffe6e6 100%);
+        }
+
+        .finance-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .finance-amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .finance-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .course-card:hover {
+            border-color: #8B0000;
+            transform: translateY(-5px);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .course-title {
+            color: #8B0000;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8B0000, #A52A2A);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .view-btn {
+            background: linear-gradient(135deg, #8B0000, #A52A2A);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(139,0,0,0.3);
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139,0,0,0.4);
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .instructors {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .instructor-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B0000, #A52A2A);
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .notice-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .notice-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .see-more {
+            color: #8B0000;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .logout-btn {
+            padding: 15px 30px;
+            margin: 20px 30px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 80px;
+            }
+
+            .menu-item span {
+                display: none;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">🎓</div>
+            
+            <div class="menu-item active">
+                <span class="menu-icon">📊</span>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">💳</span>
+                <span>Payment Info</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">✏️</span>
+                <span>Registration</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">📚</span>
+                <span>Courses</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">📝</span>
+                <span>Drop Semester</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">📊</span>
+                <span>Result</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">🔔</span>
+                <span>Notice</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">📅</span>
+                <span>Schedule</span>
+            </div>
+            
+            <div class="logout-btn">
+                <span>🚪</span>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <input type="text" class="search-bar" placeholder="Search...">
+                
+                <div class="user-profile">
+                    <div class="notification-bell">
+                        🔔
+                        <div class="notification-badge"></div>
+                    </div>
+                    <div class="user-avatar">AM</div>
+                    <div class="user-info">
+                        <h3>Abhishek Meena</h3>
+                        <p>2024F1500003</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="banner-date">November 4, 2025</div>
+                <div class="banner-title">Welcome back, Abhishek!</div>
+                <div class="banner-subtitle">Always stay updated in your Madhav University portal</div>
+                <div class="banner-illustration">🎒</div>
+            </div>
+
+            <!-- Finance Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Finance</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="finance-card">
+                        <div class="finance-icon">💰</div>
+                        <div class="finance-amount">₹ 45,000</div>
+                        <div class="finance-label">Total Payable</div>
+                    </div>
+                    <div class="finance-card highlighted">
+                        <div class="finance-icon">💳</div>
+                        <div class="finance-amount">₹ 25,000</div>
+                        <div class="finance-label">Total Paid</div>
+                    </div>
+                    <div class="finance-card">
+                        <div class="finance-icon">📊</div>
+                        <div class="finance-amount">₹ 1,500</div>
+                        <div class="finance-label">Others</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrolled Courses -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Enrolled Courses</h2>
+                    <a class="see-all">See all</a>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <div class="course-title">Object Oriented<br>Programming</div>
+                            <div class="course-icon">💻</div>
+                        </div>
+                        <button class="view-btn">View</button>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <div class="course-title">Database Management<br>Systems</div>
+                            <div class="course-icon">🗄️</div>
+                        </div>
+                        <button class="view-btn">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Instructors & Daily Notice -->
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px;">
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <h3 class="section-title" style="font-size: 18px;">Course Instructors</h3>
+                        <a class="see-all">See all</a>
+                    </div>
+                    <div class="instructors">
+                        <div class="instructor-avatar" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53)"></div>
+                        <div class="instructor-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe)"></div>
+                        <div class="instructor-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7)"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <h3 class="section-title" style="font-size: 18px;">Daily Notice</h3>
+                        <a class="see-all">See all</a>
+                    </div>
+                    <div class="notice-item">
+                        <div class="notice-title">Preliminary payment due</div>
+                        <div class="notice-text">Please complete your pending fee payment by November 15, 2025 to avoid late charges.</div>
+                        <div class="see-more">See more</div>
+                    </div>
+                    <div class="notice-item">
+                        <div class="notice-title">Mid-semester exam schedule</div>
+                        <div class="notice-text">Mid-semester examinations will be conducted from December 1-10, 2025. Check detailed schedule in exam portal.</div>
+                        <div class="see-more">See more</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
