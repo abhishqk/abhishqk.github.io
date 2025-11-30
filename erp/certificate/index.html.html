@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Madhav University — Certificate (Landscape)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#f36b00;
+      --dark:#000;         /* make title/signature names fully black */
+      --muted:#55606b;
+      --sheet-width-mm:297;
+      --sheet-height-mm:210;
+    }
+    html,body{height:100%; margin:0; background:#f3f4f6; font-family:'Poppins',system-ui,Segoe UI,Arial;}
+    .wrap{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:18px; box-sizing:border-box;}
+
+    /* A4 landscape sheet */
+    .sheet{
+      width:calc(var(--sheet-width-mm)*1mm);
+      height:calc(var(--sheet-height-mm)*1mm);
+      border-radius:6px;
+      overflow:hidden;
+      position:relative;
+      box-sizing:border-box;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:transparent;
+      /* padding inside printable area */
+      padding:20mm;
+    }
+
+    /* Put background as an <img> so it's printed more reliably */
+    .sheet .bg {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:1;
+    }
+
+    /* ensure browsers print backgrounds and colors */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* content area */
+    .content{
+      position:relative; z-index:5; width:100%; height:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center;
+      padding:6mm 10mm; box-sizing:border-box;
+    }
+
+    /* Title and structure (title darker) */
+    .cert-title{font-family:'Playfair Display',serif; font-size:36px; color:var(--dark); margin-top:30mm; margin-bottom:6px}
+    .lead{font-size:14px; color:var(--muted); margin-top:8px}
+
+    /* Recipient block (underline darker) */
+    .recipient{
+      font-size:40px; font-weight:600; color:var(--dark); margin-top:8px; padding:6px 10px;
+      border-bottom:2px dashed rgba(0,0,0,0.65); min-width:360px; display:inline-block;
+    }
+
+    .forline{font-size:16px; color:var(--muted); margin-top:10px; font-weight:500}
+    .date{font-size:13px; color:var(--muted); margin-top:12px}
+
+    /* signatures layout */
+    .sigs{width:100%; display:flex; justify-content:space-between; align-items:flex-end; gap:12mm; margin-top:auto}
+    .sigs.three .sig{width:30%}
+    .sigs.four .sig{width:22%}
+    .sig{ text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:6px; min-height:86px}
+    .sig img.sig-img{height:64px; display:block; object-fit:contain; margin-bottom:4px}
+    .sig .name{font-weight:700; font-size:14px; color:var(--dark)}
+    .sig .role{font-size:12px; color:var(--muted)}
+
+    /* controls */
+    .panel{position:fixed; right:18px; top:18px; width:420px; background:#fff; border-radius:10px; padding:12px; box-shadow:0 12px 30px rgba(10,20,40,0.12); z-index:60}
+    .panel h3{margin:0 0 8px; font-size:16px}
+    .row{display:flex; gap:8px; margin-bottom:8px}
+    .row label{width:120px; font-size:13px; color:var(--muted); align-self:center}
+    .row input[type="text"], .row input[type="file"], .row textarea{flex:1; padding:8px; border-radius:6px; border:1px solid #e6e9ef; font-size:13px}
+    .row textarea{min-height:56px; resize:vertical}
+    .btn{display:inline-block; padding:10px 12px; border-radius:8px; background:var(--accent); color:#fff; border:none; cursor:pointer}
+    .btn.ghost{background:transparent; border:1px solid rgba(0,0,0,0.06); color:var(--accent)}
+    .small-checkbox{display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:8px}
+    .hint{font-size:12px; color:#6b7280; margin-top:8px}
+
+    /* responsive & print adjustments */
+    @media (max-width:1200px){
+      .panel{position:static; width:94%; margin:8px auto}
+      .wrap{flex-direction:column; gap:12px}
+      .sheet{width:100%; height:auto; padding:28px}
+    }
+    @page{size: A4 landscape; margin:0}
+    @media print{
+      .panel{display:none}
+      .sheet{box-shadow:none; border-radius:0; width:calc(var(--sheet-width-mm)*1mm); height:calc(var(--sheet-height-mm)*1mm); padding:16mm}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="sheet" id="sheet">
+
+      <!-- background image as <img> for print reliability -->
+      <img id="bgImg" class="bg" src="certificate.png" alt="background">
+
+      <div class="content" id="content">
+        <!-- certificate title -->
+        <div id="title" class="cert-title" contenteditable="true" spellcheck="false">Certificate of Appreciation</div>
+
+        <!-- small intro line -->
+        <div class="lead" id="lead" contenteditable="true" spellcheck="false">This is to certify that</div>
+
+        <!-- Recipient (big) -->
+        <div id="recipient" class="recipient" contenteditable="true" spellcheck="false">Abhishek Meena</div>
+
+        <!-- For / reason under name -->
+        <div class="forline"> <span id="reason" contenteditable="true" spellcheck="false">Outstanding Contribution to Teaching</span></div>
+
+        <!-- date -->
+        <div class="date">Date: <span id="date" contenteditable="true" spellcheck="false">June 20, 2025</span></div>
+
+        <!-- signatures (start with 3) -->
+        <div id="sigs" class="sigs three" aria-live="polite">
+          <div class="sig">
+            <img id="sigImg1" class="sig-img" src="" alt="" style="display:none">
+            <div id="sigName1" class="name" contenteditable="true" spellcheck="false">Mr. Badal Kumar</div>
+            <div id="sigRole1" class="role" contenteditable="true" spellcheck="false">Dean</div>
+          </div>
+
+          <div class="sig">
+            <img id="sigImg2" class="sig-img" src="" alt="" style="display:none">
+            <div id="sigName2" class="name" contenteditable="true" spellcheck="false">Mr. Abhishek Meena</div>
+            <div id="sigRole2" class="role" contenteditable="true" spellcheck="false">President</div>
+          </div>
+
+          <div class="sig">
+            <img id="sigImg3" class="sig-img" src="" alt="" style="display:none">
+            <div id="sigName3" class="name" contenteditable="true" spellcheck="false">Dr. Bhawesh Kumawat</div>
+            <div id="sigRole3" class="role" contenteditable="true" spellcheck="false">Registrar</div>
+          </div>
+
+          <!-- optional 4th signature (hidden by default) -->
+          <div class="sig" id="sig4" style="display:none">
+            <img id="sigImg4" class="sig-img" src="" alt="" style="display:none">
+            <div id="sigName4" class="name" contenteditable="true" spellcheck="false">(Optional)</div>
+            <div id="sigRole4" class="role" contenteditable="true" spellcheck="false">(Role)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="panel" role="region" aria-label="Certificate Controls">
+      <h3>Edit & Export</h3>
+
+      <div class="row"><label>Heading</label><input id="inpHeading" type="text" placeholder="Certificate of Appreciation"></div>
+      <div class="row"><label>Intro line</label><input id="inpIntro" type="text" placeholder="This is to certify that"></div>
+      <div class="row"><label>Recipient</label><input id="inpRecipient" type="text" placeholder="Recipient name"></div>
+      <div class="row"><label>Reason</label><input id="inpReason" type="text" placeholder="For / Title"></div>
+      <div class="row"><label>Date</label><input id="inpDate" type="text" placeholder="e.g. June 20, 2025"></div>
+
+      <hr style="border:none; height:1px; background:#eef2f6; margin:8px 0">
+
+      <div style="font-size:13px; color:#6b7280; margin-bottom:6px">Signatures (or upload image)</div>
+
+      <div class="row"><label>Sign 1</label><input id="inpSig1" type="text" placeholder="Name"></div>
+      <div class="row"><label>Role 1</label><input id="inpRole1" type="text" placeholder="Dean"></div>
+      <div class="row"><label>Upload 1</label><input id="fileSig1" type="file" accept="image/*"></div>
+
+      <div class="row"><label>Sign 2</label><input id="inpSig2" type="text" placeholder="Name"></div>
+      <div class="row"><label>Role 2</label><input id="inpRole2" type="text" placeholder="HOD"></div>
+      <div class="row"><label>Upload 2</label><input id="fileSig2" type="file" accept="image/*"></div>
+
+      <div class="row"><label>Sign 3</label><input id="inpSig3" type="text" placeholder="Name"></div>
+      <div class="row"><label>Role 3</label><input id="inpRole3" type="text" placeholder="Registrar"></div>
+      <div class="row"><label>Upload 3</label><input id="fileSig3" type="file" accept="image/*"></div>
+
+      <hr style="border:none; height:1px; background:#eef2f6; margin:8px 0">
+
+      <div class="small-checkbox">
+        <input id="toggle4" type="checkbox"><label for="toggle4">Show 4th signature</label>
+      </div>
+
+      <div id="fourControls" style="display:none;">
+        <div class="row"><label>Sign 4</label><input id="inpSig4" type="text" placeholder="Name (optional)"></div>
+        <div class="row"><label>Role 4</label><input id="inpRole4" type="text" placeholder="Role"></div>
+        <div class="row"><label>Upload 4</label><input id="fileSig4" type="file" accept="image/*"></div>
+      </div>
+
+      <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn" id="applyBtn">Apply</button>
+        <button class="btn ghost" id="resetBtn">Reset</button>
+        <button class="btn" id="printBtn">Print / Save PDF</button>
+        <button class="btn ghost" id="downloadBtn">Download PNG</button>
+      </div>
+
+      <p class="hint">Tip: If PNG fails due to local-file security, run file via a simple local server or use Print → Save as PDF (A4 Landscape).</p>
+    </div>
+
+  </div>
+
+  <script>
+    // DOM refs
+    const sheet = document.getElementById('sheet');
+    const bgImg = document.getElementById('bgImg');
+
+    const titleEl = document.getElementById('title');
+    const leadEl = document.getElementById('lead');
+    const recipientEl = document.getElementById('recipient');
+    const reasonEl = document.getElementById('reason');
+    const dateEl = document.getElementById('date');
+
+    const sigName1 = document.getElementById('sigName1');
+    const sigName2 = document.getElementById('sigName2');
+    const sigName3 = document.getElementById('sigName3');
+    const sigName4 = document.getElementById('sigName4');
+
+    const sigRole1 = document.getElementById('sigRole1');
+    const sigRole2 = document.getElementById('sigRole2');
+    const sigRole3 = document.getElementById('sigRole3');
+    const sigRole4 = document.getElementById('sigRole4');
+
+    const sigImg1 = document.getElementById('sigImg1');
+    const sigImg2 = document.getElementById('sigImg2');
+    const sigImg3 = document.getElementById('sigImg3');
+    const sigImg4 = document.getElementById('sigImg4');
+
+    const sig4El = document.getElementById('sig4');
+    const sigsContainer = document.getElementById('sigs');
+
+    // inputs
+    const inpHeading = document.getElementById('inpHeading');
+    const inpIntro = document.getElementById('inpIntro');
+    const inpRecipient = document.getElementById('inpRecipient');
+    const inpReason = document.getElementById('inpReason');
+    const inpDate = document.getElementById('inpDate');
+
+    const inpSig1 = document.getElementById('inpSig1');
+    const inpSig2 = document.getElementById('inpSig2');
+    const inpSig3 = document.getElementById('inpSig3');
+    const inpSig4 = document.getElementById('inpSig4');
+
+    const inpRole1 = document.getElementById('inpRole1');
+    const inpRole2 = document.getElementById('inpRole2');
+    const inpRole3 = document.getElementById('inpRole3');
+    const inpRole4 = document.getElementById('inpRole4');
+
+    const fileSig1 = document.getElementById('fileSig1');
+    const fileSig2 = document.getElementById('fileSig2');
+    const fileSig3 = document.getElementById('fileSig3');
+    const fileSig4 = document.getElementById('fileSig4');
+
+    const toggle4 = document.getElementById('toggle4');
+    const fourControls = document.getElementById('fourControls');
+
+    const applyBtn = document.getElementById('applyBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const printBtn = document.getElementById('printBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    // apply changes
+    applyBtn.addEventListener('click', ()=>{
+      if(inpHeading.value.trim()) titleEl.textContent = inpHeading.value.trim();
+      if(inpIntro.value.trim()) leadEl.textContent = inpIntro.value.trim();
+      if(inpRecipient.value.trim()) recipientEl.textContent = inpRecipient.value.trim();
+      if(inpReason.value.trim()) reasonEl.textContent = inpReason.value.trim();
+      if(inpDate.value.trim()) dateEl.textContent = inpDate.value.trim();
+
+      if(inpSig1.value.trim()) sigName1.textContent = inpSig1.value.trim();
+      if(inpSig2.value.trim()) sigName2.textContent = inpSig2.value.trim();
+      if(inpSig3.value.trim()) sigName3.textContent = inpSig3.value.trim();
+      if(inpSig4 && inpSig4.value.trim()) sigName4.textContent = inpSig4.value.trim();
+
+      if(inpRole1.value.trim()) sigRole1.textContent = inpRole1.value.trim();
+      if(inpRole2.value.trim()) sigRole2.textContent = inpRole2.value.trim();
+      if(inpRole3.value.trim()) sigRole3.textContent = inpRole3.value.trim();
+      if(inpRole4 && inpRole4.value.trim()) sigRole4.textContent = inpRole4.value.trim();
+
+      syncInputs();
+    });
+
+    // reset demo
+    function setDemo(){
+      titleEl.textContent = 'Certificate of Appreciation';
+      leadEl.textContent = 'This is to certify that';
+      recipientEl.textContent = 'Abhishek Meena';
+      reasonEl.textContent = 'Outstanding Contribution to Teaching';
+      dateEl.textContent = new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+
+      sigName1.textContent = 'Mr. Badal Kumar'; sigRole1.textContent = 'Dean';
+      sigName2.textContent = 'Mr. Abhishek Meena'; sigRole2.textContent = 'President';
+      sigName3.textContent = 'Dr. Bhawesh Kumawat'; sigRole3.textContent = 'Registrar';
+      sigName4.textContent = '(Optional)'; sigRole4.textContent = '(Role)';
+
+      [fileSig1, fileSig2, fileSig3, fileSig4].forEach(f=>f.value='');
+      [sigImg1, sigImg2, sigImg3, sigImg4].forEach(img=>{ img.src=''; img.style.display='none'; });
+
+      toggle4.checked = false;
+      sig4El.style.display = 'none';
+      sigsContainer.classList.remove('four');
+      sigsContainer.classList.add('three');
+      fourControls.style.display = 'none';
+
+      syncInputs();
+    }
+
+    resetBtn.addEventListener('click', setDemo);
+
+    // sync inputs
+    function syncInputs(){
+      inpHeading.value = titleEl.textContent.trim();
+      inpIntro.value = leadEl.textContent.trim();
+      inpRecipient.value = recipientEl.textContent.trim();
+      inpReason.value = reasonEl.textContent.trim();
+      inpDate.value = dateEl.textContent.trim();
+
+      inpSig1.value = sigName1.textContent.trim(); inpRole1.value = sigRole1.textContent.trim();
+      inpSig2.value = sigName2.textContent.trim(); inpRole2.value = sigRole2.textContent.trim();
+      inpSig3.value = sigName3.textContent.trim(); inpRole3.value = sigRole3.textContent.trim();
+      inpSig4.value = sigName4.textContent.trim(); inpRole4.value = sigRole4.textContent.trim();
+    }
+
+    const deb = (fn, ms=200)=>{ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
+    ['input','blur','keyup'].forEach(evt=>{
+      [titleEl, leadEl, recipientEl, reasonEl, dateEl, sigName1, sigName2, sigName3, sigName4,
+       sigRole1, sigRole2, sigRole3, sigRole4].forEach(el=>{
+        if(!el) return;
+        el.addEventListener(evt, deb(syncInputs,180));
+      });
+    });
+
+    // file uploads display
+    function handleFile(fileInput, imgEl){
+      const file = fileInput.files && fileInput.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = (e)=>{
+        imgEl.src = e.target.result;
+        imgEl.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+    fileSig1.addEventListener('change', ()=> handleFile(fileSig1, sigImg1));
+    fileSig2.addEventListener('change', ()=> handleFile(fileSig2, sigImg2));
+    fileSig3.addEventListener('change', ()=> handleFile(fileSig3, sigImg3));
+    fileSig4.addEventListener('change', ()=> handleFile(fileSig4, sigImg4));
+
+    // toggle 4th signature
+    toggle4.addEventListener('change', (e)=>{
+      const on = e.target.checked;
+      if(on){
+        sig4El.style.display = 'flex';
+        sigsContainer.classList.remove('three'); sigsContainer.classList.add('four');
+        fourControls.style.display = 'block';
+      } else {
+        sig4El.style.display = 'none';
+        sigsContainer.classList.remove('four'); sigsContainer.classList.add('three');
+        fourControls.style.display = 'none';
+        inpSig4.value = ''; inpRole4.value = ''; fileSig4.value = '';
+        sigImg4.src = ''; sigImg4.style.display = 'none';
+        sigName4.textContent = '(Optional)'; sigRole4.textContent = '(Role)';
+      }
+      syncInputs();
+    });
+
+    // Print
+    printBtn.addEventListener('click', ()=>{ window.print(); });
+
+    // === PNG generation: draw background + DOM text + signature images onto canvas ===
+    async function downloadPNG(){
+      try {
+        // sheet size in CSS pixels
+        const rect = sheet.getBoundingClientRect();
+        const width = Math.round(rect.width);
+        const height = Math.round(rect.height);
+
+        // scale factor for better resolution
+        const scale = 2;
+        const canvas = document.createElement('canvas');
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+        const ctx = canvas.getContext('2d');
+
+        // helper loads image and returns promise
+        const loadImage = (src) => new Promise((res, rej) => {
+          if(!src) return res(null);
+          const i = new Image();
+          // IMPORTANT: If your image is local and you're opening file://, some browsers block drawing to canvas.
+          // If export fails, run via local server.
+          i.onload = ()=>res(i);
+          i.onerror = ()=>res(null);
+          i.src = src;
+        });
+
+        // Draw background image (use bgImg.src)
+        const bg = await loadImage(bgImg.src || bgImg.getAttribute('src'));
+        if(bg){
+          // draw background covering full sheet
+          ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+        } else {
+          // white background fallback
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0,0,canvas.width, canvas.height);
+        }
+
+        // get positions of elements relative to sheet
+        const sheetRect = sheet.getBoundingClientRect();
+        function rectRel(el){
+          const r = el.getBoundingClientRect();
+          return {
+            x: (r.left - sheetRect.left) * scale,
+            y: (r.top - sheetRect.top) * scale,
+            w: r.width * scale,
+            h: r.height * scale
+          };
+        }
+
+        // Draw text (use simple styles similar to on-screen)
+        // Title
+        const titleR = rectRel(titleEl);
+        ctx.fillStyle = '#000';
+        // Title font - Playfair heavy; fallback if not loaded
+        const titleFontSize = Math.max(22, Math.round((titleR.h) * 0.45)); // approximate
+        ctx.font = `${titleFontSize}px 'Playfair Display', serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(titleEl.textContent.trim(), titleR.x + titleR.w/2, titleR.y + titleR.h/2);
+
+        // Lead line
+        const leadR = rectRel(leadEl);
+        ctx.fillStyle = '#444';
+        ctx.font = `${Math.max(10, Math.round(leadR.h * 0.6))}px Poppins, sans-serif`;
+        ctx.fillText(leadEl.textContent.trim(), leadR.x + leadR.w/2, leadR.y + leadR.h/2);
+
+        // Recipient (big)
+        const recR = rectRel(recipientEl);
+        ctx.fillStyle = '#000';
+        // scale recipient font to fit width
+        let recFont = 48 * scale;
+        ctx.font = `${recFont}px Poppins, sans-serif`;
+        // reduce font until fits
+        while(ctx.measureText(recipientEl.textContent.trim()).width > recR.w - 40 && recFont > 10){
+          recFont -= 4;
+          ctx.font = `${recFont}px Poppins, sans-serif`;
+        }
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(recipientEl.textContent.trim(), recR.x + recR.w/2, recR.y + recR.h/2);
+
+        // For / reason
+        const reasonR = rectRel(reasonEl);
+        ctx.fillStyle = '#444';
+        ctx.font = `${Math.max(12, Math.round(reasonR.h * 0.8))}px Poppins, sans-serif`;
+        ctx.fillText(reasonEl.textContent.trim(), reasonR.x + reasonR.w/2, reasonR.y + reasonR.h/2);
+
+        // Date
+        const dateR = rectRel(dateEl);
+        ctx.fillStyle = '#444';
+        ctx.font = `${Math.max(10, Math.round(dateR.h * 0.7))}px Poppins, sans-serif`;
+        // date element includes "Date: " prefix in DOM; draw full
+        ctx.fillText(dateEl.textContent.trim(), dateR.x + dateR.w/2, dateR.y + dateR.h/2);
+
+        // Draw signatures images and their names
+        async function drawSignature(sigImgEl, nameEl, roleEl){
+          const img = await loadImage(sigImgEl.src);
+          const nameR = rectRel(nameEl);
+          const roleR = rectRel(roleEl);
+          // attempt to position image above the name: compute center x from nameR
+          const cx = nameR.x + nameR.w/2;
+          // image size
+          const imgW = Math.min(canvas.width * 0.18, nameR.w * 0.9); // limit
+          const imgH = img ? (img.height * (imgW / img.width)) : 0;
+          const imgX = cx - imgW/2;
+          const imgY = nameR.y - imgH - 6*scale;
+          if(img && imgW>0 && imgH>0){
+            ctx.drawImage(img, imgX, imgY, imgW, imgH);
+          }
+          // draw name
+          ctx.fillStyle = '#000';
+          const nameFont = Math.max(10, Math.round(nameR.h * 0.9));
+          ctx.font = `${nameFont}px Poppins, sans-serif`;
+          ctx.textAlign = 'center';
+          ctx.fillText(nameEl.textContent.trim(), cx, nameR.y + nameR.h/2);
+
+          // draw role
+          ctx.fillStyle = '#444';
+          const roleFont = Math.max(9, Math.round(roleR.h * 0.85));
+          ctx.font = `${roleFont}px Poppins, sans-serif`;
+          ctx.fillText(roleEl.textContent.trim(), cx, roleR.y + roleR.h/2);
+        }
+
+        // Draw three (or four)
+        await drawSignature(sigImg1, sigName1, sigRole1);
+        await drawSignature(sigImg2, sigName2, sigRole2);
+        await drawSignature(sigImg3, sigName3, sigRole3);
+        if(sig4El.style.display !== 'none'){
+          await drawSignature(sigImg4, sigName4, sigRole4);
+        }
+
+        // Done — export
+        canvas.toBlob(function(blob){
+          if(!blob){ alert('PNG export failed. Use Print → Save as PDF.'); return; }
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'certificate.png';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }, 'image/png');
+
+      } catch (err){
+        console.error(err);
+        alert('Export failed — try opening this file using a local server (e.g. python -m http.server) then use Download PNG or use Print → Save as PDF.');
+      }
+    }
+
+    downloadBtn.addEventListener('click', downloadPNG);
+
+    // Init
+    document.addEventListener('DOMContentLoaded', ()=>{
+      setDemo();
+      syncInputs();
+    });
+
+    // Utility functions (moved below for clarity)
+    function setDemo(){
+      titleEl.textContent = 'Certificate of Appreciation';
+      leadEl.textContent = 'This is to certify that';
+      recipientEl.textContent = 'Abhishek Meena';
+      reasonEl.textContent = 'Outstanding Contribution to Teaching';
+      dateEl.textContent = new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+
+      sigName1.textContent = 'Mr. Badal Kumar'; sigRole1.textContent = 'Dean';
+      sigName2.textContent = 'Mr. Abhishek Meena'; sigRole2.textContent = 'President';
+      sigName3.textContent = 'Dr. Bhawesh Kumawat'; sigRole3.textContent = 'Registrar';
+      sigName4.textContent = '(Optional)'; sigRole4.textContent = '(Role)';
+
+      [fileSig1, fileSig2, fileSig3, fileSig4].forEach(f=>f.value='');
+      [sigImg1, sigImg2, sigImg3, sigImg4].forEach(img=>{ img.src=''; img.style.display='none'; });
+
+      toggle4.checked = false;
+      sig4El.style.display = 'none';
+      sigsContainer.classList.remove('four');
+      sigsContainer.classList.add('three');
+      fourControls.style.display = 'none';
+      syncInputs();
+    }
+
+    function syncInputs(){
+      inpHeading.value = titleEl.textContent.trim();
+      inpIntro.value = leadEl.textContent.trim();
+      inpRecipient.value = recipientEl.textContent.trim();
+      inpReason.value = reasonEl.textContent.trim();
+      inpDate.value = dateEl.textContent.trim();
+
+      inpSig1.value = sigName1.textContent.trim(); inpRole1.value = sigRole1.textContent.trim();
+      inpSig2.value = sigName2.textContent.trim(); inpRole2.value = sigRole2.textContent.trim();
+      inpSig3.value = sigName3.textContent.trim(); inpRole3.value = sigRole3.textContent.trim();
+      inpSig4.value = sigName4.textContent.trim(); inpRole4.value = sigRole4.textContent.trim();
+    }
+
+    // file input handlers below (kept here)
+    function handleFile(fileInput, imgEl){
+      const file = fileInput.files && fileInput.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = (e)=>{
+        imgEl.src = e.target.result;
+        imgEl.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+    fileSig1.addEventListener('change', ()=> handleFile(fileSig1, sigImg1));
+    fileSig2.addEventListener('change', ()=> handleFile(fileSig2, sigImg2));
+    fileSig3.addEventListener('change', ()=> handleFile(fileSig3, sigImg3));
+    fileSig4.addEventListener('change', ()=> handleFile(fileSig4, sigImg4));
+
+    // toggle 4th signature
+    toggle4.addEventListener('change', (e)=>{
+      const on = e.target.checked;
+      if(on){
+        sig4El.style.display = 'flex';
+        sigsContainer.classList.remove('three');
+        sigsContainer.classList.add('four');
+        fourControls.style.display = 'block';
+      } else {
+        sig4El.style.display = 'none';
+        sigsContainer.classList.remove('four');
+        sigsContainer.classList.add('three');
+        fourControls.style.display = 'none';
+        inpSig4.value = ''; inpRole4.value = ''; fileSig4.value = '';
+        sigImg4.src = ''; sigImg4.style.display = 'none';
+        sigName4.textContent = '(Optional)'; sigRole4.textContent = '(Role)';
+      }
+      syncInputs();
+    });
+
+    // apply button: copy inputs into certificate
+    applyBtn.addEventListener('click', ()=>{
+      if(inpHeading.value.trim()) titleEl.textContent = inpHeading.value.trim();
+      if(inpIntro.value.trim()) leadEl.textContent = inpIntro.value.trim();
+      if(inpRecipient.value.trim()) recipientEl.textContent = inpRecipient.value.trim();
+      if(inpReason.value.trim()) reasonEl.textContent = inpReason.value.trim();
+      if(inpDate.value.trim()) dateEl.textContent = inpDate.value.trim();
+
+      if(inpSig1.value.trim()) sigName1.textContent = inpSig1.value.trim();
+      if(inpSig2.value.trim()) sigName2.textContent = inpSig2.value.trim();
+      if(inpSig3.value.trim()) sigName3.textContent = inpSig3.value.trim();
+      if(inpSig4 && inpSig4.value.trim()) sigName4.textContent = inpSig4.value.trim();
+
+      if(inpRole1.value.trim()) sigRole1.textContent = inpRole1.value.trim();
+      if(inpRole2.value.trim()) sigRole2.textContent = inpRole2.value.trim();
+      if(inpRole3.value.trim()) sigRole3.textContent = inpRole3.value.trim();
+      if(inpRole4 && inpRole4.value.trim()) sigRole4.textContent = inpRole4.value.trim();
+
+      syncInputs();
+    });
+
+  </script>
+</body>
+</html>

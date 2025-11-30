@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Homoeopathic Conference 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4a0e0e 0%, #8b1538 50%, #4a0e0e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 15px 0;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ffd700;
+            }
+            50% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px #ffd700, 0 0 30px #ffd700;
+            }
+        }
+
+        .theme {
+            font-size: 1.5em;
+            color: #f0e68c;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .date-venue {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #e0e0e0;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #d4af37;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: rgba(139, 21, 56, 0.6);
+            backdrop-filter: blur(10px);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card h2 {
+            color: #ffd700;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #d4af37;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            color: #4a0e0e;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateX(5px);
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-left: 5px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateX(10px);
+        }
+
+        .time {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffd700;
+            min-width: 120px;
+        }
+
+        .session {
+            flex: 1;
+            color: #e0e0e0;
+        }
+
+        .speaker-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            border-color: #d4af37;
+            transform: scale(1.02);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .speaker-name {
+            font-size: 1.3em;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .speaker-title {
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        .committee-member {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #d4af37;
+        }
+
+        .member-name {
+            font-weight: bold;
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+
+        .member-role {
+            color: #e0e0e0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .topics-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topics-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .topics-list li:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateX(10px);
+        }
+
+        .topics-list li::before {
+            content: "✦ ";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-item strong {
+            color: #ffd700;
+        }
+
+        .highlight {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dashed #d4af37;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #4a0e0e;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .supporters {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .supporter-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+            font-size: 0.95em;
+        }
+
+        .qr-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 3px dashed #d4af37;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid #d4af37;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .theme {
+                font-size: 1.2em;
+            }
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .time {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="logo-badge floating">Guided by NCH</div>
+            <div class="logo-badge floating" style="animation-delay: 0.3s;">Madhav University</div>
+        </div>
+        <h1>National Homoeopathic Conference 2025</h1>
+        <div class="theme">"Role of Homoeopathy in Natural Healing"</div>
+        <div class="date-venue">
+            <div>📅 08 November 2025</div>
+            <div>📍 Madhav Homoeopathic Medical College & Hospital</div>
+            <div>Abu Road, Distt. Sirohi, Rajasthan</div>
+        </div>
+        <div class="tagline">Homoeopathy for All — Safe, Scientific, Sustainable</div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2><span class="icon">ℹ</span> About the Conference</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                The National Homoeopathic Conference 2025 aims to provide a platform for academicians, 
+                practitioners, researchers, and students to exchange insights on emerging trends, clinical 
+                practices, and research in Homoeopathy. Join us for an enriching experience of knowledge 
+                sharing and networking with leading experts in the field.
+            </p>
+            <div class="highlight" style="margin-top: 20px;">
+                <h3 style="color: #ffd700; margin-bottom: 15px;">About Madhav Homoeopathic Medical College & Hospital</h3>
+                <p style="line-height: 1.6;">
+                    A premier institution dedicated to quality education and holistic healthcare through Homoeopathy. 
+                    With a vision to nurture skilled practitioners and researchers, the college integrates classical 
+                    principles with modern advancements in Homoeopathic science.
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 20px;">
+                <h3 style="color: #ffd700; margin-bottom: 15px; text-align: center;">Guided by</h3>
+                <p style="text-align: center; font-size: 1.1em;">
+                    <strong style="color: #ffd700;">National Commission for Homoeopathy (NCH)</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Key Topics</h2>
+            <ul class="topics-list">
+                <li>Advancements in Evidence-Based Homoeopathy</li>
+                <li>Role of Homoeopathy in Chronic Diseases</li>
+                <li>Integrative Medicine: Homoeopathy & Public Health with Emergency Dealing</li>
+                <li>New Horizons in Materia Medica and Repertory</li>
+                <li>Research Methodology & Case Documentations</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⏰</span> Program Schedule</h2>
+            <div class="schedule-item">
+                <div class="time">09:00 AM</div>
+                <div class="session">Registration & Breakfast</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">10:00 AM</div>
+                <div class="session">Inaugural Ceremony</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">11:00 AM</div>
+                <div class="session">Keynote Address by Chief Guest</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">12:00 PM</div>
+                <div class="session">Scientific Session I</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">01:30 PM</div>
+                <div class="session">Lunch Break</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">02:30 PM</div>
+                <div class="session">Scientific Session II</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">04:00 PM</div>
+                <div class="session">Interactive Panel Discussion</div>
+            </div>
+            <div class="schedule-item">
+                <div class="time">05:00 PM</div>
+                <div class="session">Valedictory Function & Certificate Distribution</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎤</span> Eminent Speakers</h2>
+            <div class="grid">
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Puneet R Shah</div>
+                    <div class="speaker-title">Principal, University College of Homoeopathy, Kekri, Ajmer, Rajasthan</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Nirav Bhatt</div>
+                    <div class="speaker-title">Principal/Dean, Nootan Homoeopathic Medical College and Hospital, Sankalchand Patel University, Visnagar, Gujarat</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Trilottama Galande</div>
+                    <div class="speaker-title">HOD Department of Repertory, Gokul Homoeopathic Medical College, Gokul Global University</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Vikrant Saxsena</div>
+                    <div class="speaker-title">Modern Medicine Intensive Care Expert, Hardik Hospital, Abu Road</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Rajeev Ruhi</div>
+                    <div class="speaker-title">V.P, Nootan Homoeopathic Medical College and Hospital, Sankalchand Patel University, Visnagar, Gujarat</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Dr. Nipun Singh Dabi</div>
+                    <div class="speaker-title">Assistant Professor of Practice of Medicine, Madhav Homoeopathic Medical College and Hospital</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #d4af37; font-style: italic;">
+                ...and many more distinguished guests
+            </p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">👥</span> Organizing Committee</h2>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Patrons</h3>
+                <div class="committee-member">
+                    <div class="member-name">Prof. (Dr.) Raj Kumar</div>
+                    <div class="member-role">Chairman, Madhav University</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Co-Patrons</h3>
+                <div class="grid">
+                    <div class="committee-member">
+                        <div class="member-name">Sh. Himmat Singh Deval</div>
+                        <div class="member-role">Chairperson, Madhav University</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Prof. Rajeev Mathur</div>
+                        <div class="member-role">President, Madhav University</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Bhawesh Kumawat</div>
+                        <div class="member-role">Registrar, Madhav University</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Bharti Desai</div>
+                        <div class="member-role">Director Homoeopathy & Allied Health Science</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Conference Director</h3>
+                <div class="committee-member">
+                    <div class="member-name">Dr. Bharti Desai</div>
+                    <div class="member-role">Director, MHMCH, Pindwara-Sirohi</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Convener</h3>
+                <div class="committee-member">
+                    <div class="member-name">Prof. (Dr.) Vijay Pratap Singh</div>
+                    <div class="member-role">Principal, MHMCH & Dean, Allied Health Science</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Organizing Secretaries</h3>
+                <div class="grid">
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Bhanu Pratap Singh</div>
+                        <div class="member-role">Professor, Homoeopathic Materia Medica</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Abhijit Baron Giri</div>
+                        <div class="member-role">Associate Professor, Forensic Medicine and Toxicology</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Co-Organizing Secretaries</h3>
+                <div class="grid">
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Mahendra Singh Parmar</div>
+                        <div class="member-role">Dean, Academics & Humanities & Social Science</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Pawan Kumar</div>
+                        <div class="member-role">Director, Research</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. D.K. Upadhyay</div>
+                        <div class="member-role">Dean, Faculty of Law</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Jitendra Kumar Tiwari</div>
+                        <div class="member-role">Dean, Faculty of Education</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Sushil Bhargav</div>
+                        <div class="member-role">Dean, Faculty of Pharmacy</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. D.C. Upadhyay</div>
+                        <div class="member-role">Dean, Faculty of Basic and Applied Sciences</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Gitam Singh</div>
+                        <div class="member-role">Dean, Faculty of Agriculture</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Jitendra Pujari</div>
+                        <div class="member-role">Principal, Faculty of Nursing</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Ganga Singh Chauhan</div>
+                        <div class="member-role">Dean, Faculty of Commerce and Management</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Rajendra Kumar Vairagi</div>
+                        <div class="member-role">Dean, Faculty of Engineering and Technology</div>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-name">Dr. Vaibhav Dave</div>
+                        <div class="member-role">HOD, Faculty of Physiotherapy</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0, 0, 0, 0.3); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px; text-align: center;">Committee Heads</h3>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Venue Management Committee</h4>
+                    <p>Dr. Bhanu Pratap Singh, Mr. Mahendra Singh Gurjar, Dr. Amit Bhaskar</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Technical Session</h4>
+                    <p>Dr. Nipun Singh Dabi, Dr. Monika P., Dr. Rajshree Jangid, Dr. Dipanshu Bachhal</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Reception Committee</h4>
+                    <p>Dr. Bhanuja Singh, Dr. Tarishi Singh, Dr. Rohan Sharma, Dr. Surabh Sharma, Dr. Komal</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Accommodation, Hospitality & Travel</h4>
+                    <p>Mr. Mahendra Singh Gurjar, Dr. Pratiksha Singh, Dr. Rohan Sharma</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Registration & Poster Presentations</h4>
+                    <p>Dr. Abhijit Giri, Dr. Rajshree Jangid, Dr. Arvind Singh, Dr. C. Podel, Dr. Rafi, Dr. Suresh</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Inauguration Stage and Food Refreshment</h4>
+                    <p>Dr. Bhanu Pratap Singh, Dr. Bhanuja Singh, Dr. Arvind Singh, Dr. Rohan Sharma, Mr. Suryapal Gehlot, Miss Chillu Kunwar</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h4 style="color: #d4af37; margin-bottom: 10px;">Media, IT & Social Media Support</h4>
+                    <p>Mr. Ashok Kumar Prajapat, Mr. Badal Kumar, Mr. Abhishek Meena, Mr. Ashok Charan</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🤝</span> Supported By</h2>
+            <div class="supporters">
+                <div class="supporter-badge">Govt. Homoeopathic Medical College & Hospital, Kekri, Ajmer (Raj.)</div>
+                <div class="supporter-badge">Gokul Homoeopathic Medical College and Hospital, Siddhpur, Gujarat</div>
+                <div class="supporter-badge">Nootan Homoeopathic Medical College and Hospital, Visnagar, Gujarat</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏥</span> College Facilities</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Infrastructure</h3>
+                    <p>Well-equipped departments and laboratories</p>
+                </div>
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Healthcare</h3>
+                    <p>24×7 functioning hospital with IPD & OPD services</p>
+                </div>
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Faculty</h3>
+                    <p>Experienced teaching faculty</p>
+                </div>
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Research</h3>
+                    <p>Research and publication cell</p>
+                </div>
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Resources</h3>
+                    <p>Herbal garden & pharmacy unit</p>
+                </div>
+                <div class="grid-item">
+                    <h3 style="color: #ffd700; margin-bottom: 10px;">Training</h3>
+                    <p>Modern Skill Lab</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="card">
+            <h2><span class="icon">📝</span> Registration Information</h2>
+            <div class="highlight">
+                <h3 style="color: #ffd700; margin-bottom: 15px; text-align: center;">Who Can Register?</h3>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0;">
+                    <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; border: 2px solid #d4af37;">
+                        <strong style="color: #ffd700;">UG/PG Students</strong>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; border: 2px solid #d4af37;">
+                        <strong style="color: #ffd700;">Practitioners</strong>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; border: 2px solid #d4af37;">
+                        <strong style="color: #ffd700;">Teachers</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info" style="margin-top: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">For Registration & Queries</h3>
+                <div class="contact-item">
+                    <strong>Dr. Abhijit Giri:</strong> 📞 8769989752
+                </div>
+                <div class="contact-item">
+                    <strong>Dr. Arvind Singh:</strong> 📞 7459889683
+                </div>
+                <div class="contact-item">
+                    <strong>General Contact:</strong> 📞 8905022846
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="https://forms.gle/V33tRgdwLuQ8GHjd9" class="btn">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.2em; color: #ffd700; margin-bottom: 10px;">
+            <strong>National Homoeopathic Conference 2025</strong>
+        </p>
+        <p style="margin: 10px 0;">
+            Madhav Homoeopathic Medical College & Hospital<br>
+            (Affiliated to Madhav University Pindwara)<br>
+            Abu Road, Distt. Sirohi, Rajasthan
+        </p>
+        <p style="margin-top: 20px; color: #d4af37;">
+            © 2025 Madhav Homoeopathic Medical College. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+</html>
